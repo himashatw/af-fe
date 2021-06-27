@@ -2,8 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header/Header";
 import "./App.css";
+import EditorDashboard from "./EditorWorkspace/EditorDashboard";
 import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
+
 
 
 const App = () => {
@@ -17,6 +19,9 @@ const App = () => {
           </Route>
           <Route exact path="/user/attendee">
             <CreateAttendee />
+          </Route>
+          <Route exact path="/editor">
+            <EditorDashboard />
           </Route>
         </Switch>
       </div>
