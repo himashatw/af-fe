@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header/Header";
 import "./App.css";
 import CreateAttendee from "./Users/CreateAttendee";
+import CreateReseacher from "./Users/CreateResearcher";
 
 const App = () => {
   return (
@@ -15,6 +16,9 @@ const App = () => {
           </Route>
           <Route exact path="/user/attendee">
             <CreateAttendee />
+          </Route>
+          <Route exact path="/user/researcher">
+            <CreateReseacher />
           </Route>
         </Switch>
       </div>
