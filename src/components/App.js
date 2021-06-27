@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header/Header";
 import "./App.css";
 import CreateAttendee from "./Users/CreateAttendee";
+import HeroSection from "../components/HeroSection/HeroSection";
+
 
 const App = () => {
   return (
@@ -11,7 +13,7 @@ const App = () => {
         <Header />
         <Switch>
           <Route exact path="/">
-            <h1>This is App.js File</h1>
+            <HeroSection />
           </Route>
           <Route exact path="/user/attendee">
             <CreateAttendee />
