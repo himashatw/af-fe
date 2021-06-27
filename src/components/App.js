@@ -4,8 +4,11 @@ import Header from "./Header/Header";
 import "./App.css";
 import CreateAttendee from "../components/Users/CreateAttendee";
 import CreateReseacher from "../components/Users/CreateResearcher";
+import EditorDashboard from "./EditorWorkspace/EditorDashboard";
+import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
 import CreateWsConductor from "../components/Users/CreateWsConductor";
+
 
 const App = () => {
   return (
@@ -24,6 +27,8 @@ const App = () => {
           </Route>
           <Route exact path="/user/wsconductor">
             <CreateWsConductor />
+          <Route exact path="/editor">
+            <EditorDashboard />
           </Route>
         </Switch>
       </div>
