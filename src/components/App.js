@@ -27,6 +27,7 @@ const App = () => {
           </Route>
           <Route exact path="/user/wsconductor">
             <CreateWsConductor />
+          </Route>
           <Route exact path="/editor">
             <EditorDashboard />
           </Route>

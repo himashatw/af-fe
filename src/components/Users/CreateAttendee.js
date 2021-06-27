@@ -55,7 +55,7 @@ const createAttendee = (props) => {
                                 name="fullName"
                                 value={attendee.fullName}
                                 onChange={onChange}
-                                placeholder="Enter Your Full Name"
+                                placeholder="John Doe"
                             />
                         </div>
                         <div className="mb-3">
@@ -67,7 +67,7 @@ const createAttendee = (props) => {
                                 name="email"
                                 value={attendee.email}
                                 onChange={onChange}
-                                placeholder="Enter Your Email"
+                                placeholder="abc@gmail.com"
                             />
                         </div>
                         <div className="mb-3">
@@ -79,7 +79,9 @@ const createAttendee = (props) => {
                                 name="password"
                                 value={attendee.password}
                                 onChange={onChange}
-                                placeholder="Enter Your Password"
+                                placeholder="minimum 4 characters"
+                                minLength="4"
+                                pattern="[0-9a-fA-F]{4,8}"
                             />
                         </div>
                         <div className="mb-3">
@@ -91,7 +93,9 @@ const createAttendee = (props) => {
                                 name="phoneNo"
                                 value={attendee.phoneNo}
                                 onChange={onChange}
-                                placeholder="Enter Your Mobile Number"
+                                placeholder="071 555 5554"
+                                pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
+                                maxLength="10"
                             />
                         </div>
                         <div className="mb-3">
