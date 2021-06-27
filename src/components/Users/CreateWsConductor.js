@@ -102,6 +102,7 @@ const CreateWsConductor = (props) => {
                                 value={phoneNo}
                                 onChange={(e) => setPhoneNo(e.target.value)}
                                 name="phoneNo"
+                                placeholder="Enter your mobile number"
                             />
                         </div>
                         <div className="form-group">
