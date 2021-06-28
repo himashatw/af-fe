@@ -30,7 +30,7 @@ const EditorDashboard = () => {
         <Link to="/editor/addNews" className="btn btn-primary">
               Add News
         </Link>
-        <Link to="/editor/viewPost" className="btn btn-success">
+        <Link to="/editor/viewNews" className="btn btn-success">
               View News
         </Link>
       </div>

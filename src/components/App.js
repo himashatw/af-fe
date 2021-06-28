@@ -13,6 +13,7 @@ import CreateWsConductor from "../components/Users/CreateWsConductor";
 import AddSpeaker from "./EditorWorkspace/AddSpeaker";
 import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
 import AddNews from "./EditorWorkspace/AddNews";
+import ViewNews from "./EditorWorkspace/ViewNews";
 
 const App = () => {
   return (
@@ -44,6 +45,9 @@ const App = () => {
           </Route>
           <Route exact path="/editor/addNews">
             <AddNews />
+          </Route>
+          <Route exact path="/editor/viewNews">
+            <ViewNews />
           </Route>
         </Switch>
       </div>
