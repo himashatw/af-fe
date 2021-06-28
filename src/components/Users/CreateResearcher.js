@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from '../../services/axios';
-import { useHistory } from 'react-router-dom';
+import {ProgressBar} from 'react-bootstrap';
+import { useHistory,Link } from 'react-router-dom';
 
 const CreateReseacher = (props) => {
     //const history = useHistory();
@@ -15,6 +16,11 @@ const CreateReseacher = (props) => {
             found: false,
             message: ''
         })
+    const [progressPercent, setProgressPercent] = useState();
+    const [error, setError] = useState({
+        found: false,
+        message: ''
+    })
 
     const upload = e => {
         setUploads(e.target.files[0])
@@ -35,8 +41,16 @@ const CreateReseacher = (props) => {
         setEmail("");
         setPassword("");
         setPhoneNo("");
-
-        axios.post("/reseacher/add", formData)
+        
+        axios.post("/reseacher/add", formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+            onUploadProgress: data => {
+                //Set the progress value to show the progress bar
+                setProgressPercent(Math.round((100 * data.loaded) / data.total))
+            }
+        })
             .then((res) => {
                 resdata = res.data.message;
                 alert(resdata);
@@ -98,6 +112,9 @@ const CreateReseacher = (props) => {
                                 placeholder="minimum 4 characters"
                                 minLength="4"
                                 pattern="[0-9a-fA-F]{4,8}"
+                                placeholder="minimum 8 characters"
+                                pattern="(?=.*\[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
                             />
                         </div>
                         <div className="mb-3">
@@ -112,6 +129,8 @@ const CreateReseacher = (props) => {
                                 name="phoneNo"
                                 placeholder="071 555 5554"
                                 pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
+                                pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                                title="Must contain at least 10  numbers"
                                 maxLength="10"
                             />
                         </div>
@@ -120,6 +139,10 @@ const CreateReseacher = (props) => {
                                 {error.message}
                             </span>}
                             <br/>
+                            {error.found && <span className="alert-danger" role='alert'>
+                                {error.message}
+                            </span>}
+                            <br />
                             <label htmlFor="upload" className="form-label">Upload your file</label><br />
                             <input
                                 type="file"
@@ -129,11 +152,15 @@ const CreateReseacher = (props) => {
                                 onChange={upload}
                             />
                         </div>
+                        {progressPercent && <ProgressBar now={progressPercent} label={`${progressPercent}%`} />}
                         <br />
 
                         <button type="submit" className="btn btn-primary">
                             Submit
                         </button>
+                        <Link to = "/sign-up">
+                        <button className="btn btn-danger" style={{ marginLeft: "2%" }}>Cancel</button>
+                        </Link>
                     </form>
                 </div>
             </div>

@@ -7,6 +7,7 @@ import CreateReseacher from "../components/Users/CreateResearcher";
 import EditorDashboard from "./EditorWorkspace/EditorDashboard";
 import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
+
 import viewResearches from './Reviewer/viewResearches'
 import CreateWsConductor from "../components/Users/CreateWsConductor";
 
@@ -15,19 +16,28 @@ import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
 import AddNews from "./EditorWorkspace/AddNews";
 import ViewNews from "./EditorWorkspace/ViewNews";
 
+import viewResearches from "./Reviewer/viewResearches";
+import CreateWsConductor from "../components/Users/CreateWsConductor";
+import UserRegistrationButton from "./Users/UserRegistrationButton/UserRegistrationButton";
+import AddSpeaker from "./EditorWorkspace/AddSpeaker";
+import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
+import AdminNavBar from "./Admin/AdminNavBar/AdminNavBar";
+import Home from "../components/Admin/Pages/Home";
+
+
 const App = () => {
   return (
     <Router>
       <div>
-        <Header />
         <Switch>
           <Route exact path="/">
+            <Header />
             <HeroSection />
           </Route>
           <Route exact path="/user/attendee">
             <CreateAttendee />
           </Route>
-          <Route path="/viewResearches" component ={viewResearches}/>
+          <Route path="/viewResearches" component={viewResearches} />
           <Route exact path="/user/researcher">
             <CreateReseacher />
           </Route>
@@ -36,6 +46,9 @@ const App = () => {
           </Route>
           <Route exact path="/editor/dashboard">
             <EditorDashboard />
+          </Route>
+          <Route exact path="/sign-up">
+            <UserRegistrationButton />
           </Route>
           <Route exact path="/editor/addSpeaker">
             <AddSpeaker />
@@ -48,6 +61,10 @@ const App = () => {
           </Route>
           <Route exact path="/editor/viewNews">
             <ViewNews />
+          </Route>
+          <Route exact path="/admin">
+            <AdminNavBar />
+            <Home />
           </Route>
         </Switch>
       </div>
