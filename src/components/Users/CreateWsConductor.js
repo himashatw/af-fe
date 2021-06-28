@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from '../../services/axios';
-import {ProgressBar} from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { ProgressBar } from 'react-bootstrap';
+import { useHistory, Link } from 'react-router-dom';
 
 const CreateWsConductor = (props) => {
     //const history = useHistory();
@@ -9,6 +9,9 @@ const CreateWsConductor = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
+    const [workshopTitle, setworkshopTitle] = useState("");
+    const [workshopData, setworkshopData] = useState("");
+    const [workshopTime, setworkshopTime] = useState("");
     const [uploads, setUploads] = useState("");
 
     const [progressPercent, setProgressPercent] = useState();
@@ -30,12 +33,18 @@ const CreateWsConductor = (props) => {
         formData.append("email", email);
         formData.append("password", password);
         formData.append("phoneNo", phoneNo);
+        formData.append("workshopTitle", workshopTitle);
+        formData.append("workshopData", workshopData);
+        formData.append("workshopTime", workshopTime);
         formData.append("uploads", uploads);
 
         setfullName("");
         setEmail("");
         setPassword("");
         setPhoneNo("");
+        setworkshopTitle("")
+        setworkshopData("")
+        setworkshopTime("")
 
         axios.post("/workshopcon/add", formData, {
             headers: {
@@ -45,7 +54,7 @@ const CreateWsConductor = (props) => {
                 //Set the progress value to show the progress bar
                 setProgressPercent(Math.round((100 * data.loaded) / data.total))
             }
-            })
+        })
             .then((res) => {
                 resdata = res.data.message;
                 alert(resdata);
@@ -113,7 +122,7 @@ const CreateWsConductor = (props) => {
                         <div className="mb-3">
                             <label htmlFor="phoneNo" className="form-label">Mobile Number</label>
                             <input
-                                type="phoneNo"
+                                type="text"
                                 className="form-control"
                                 id="phoneNo"
                                 required
@@ -126,26 +135,74 @@ const CreateWsConductor = (props) => {
                                 maxLength="10"
                             />
                         </div>
-                        <div className="mb-3">
-                        {error.found &&<span className="alert-danger" role='alert'>
-                                {error.message}
-                            </span>}
-                            <br/>
-                            <label htmlFor="upload" className="form-label">Upload your file</label><br />
-                            <input
-                                type="file"
-                                uploads="uploads"
-                                required
-                                className="form-control-file"
-                                onChange={upload}
-                            />
+                        {/* //card */}
+                        <div className="card">
+                            <div className="card-header">
+                                <h6>Workshop Details</h6>
+                            </div>
+                            <div className="card-body">
+                                <div className="mb-3">
+                                    <label htmlFor="wstitle" className="form-label">Workshop Title</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="workshopTitle"
+                                        required
+                                        value={workshopTitle}
+                                        onChange={(e) => setworkshopTitle(e.target.value)}
+                                        name="workshopTitle"
+                                        placeholder="Workshop Title"
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="wsdate" className="form-label">Workshop Date</label>
+                                    <input
+                                        type="date"
+                                        className="form-control"
+                                        id="workshopData"
+                                        required
+                                        value={workshopData}
+                                        onChange={(e) => setworkshopData(e.target.value)}
+                                        name="workshopData"
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="wstime" className="form-label">Workshop Time</label>
+                                    <input
+                                        type="time"
+                                        className="form-control"
+                                        id="workshopTime"
+                                        required
+                                        value={workshopTime}
+                                        onChange={(e) => setworkshopTime(e.target.value)}
+                                        name="workshopTime"
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    {error.found && <span className="alert-danger" role='alert'>
+                                        {error.message}
+                                    </span>}
+                                    <br />
+                                    <label htmlFor="upload" className="form-label">Upload your file</label><br />
+                                    <input
+                                        type="file"
+                                        uploads="uploads"
+                                        required
+                                        className="form-control-file"
+                                        onChange={upload}
+                                    />
+                                </div>
+                                {progressPercent && <ProgressBar now={progressPercent} label={`${progressPercent}%`} />}
+                                <br />
+                            </div>
                         </div>
-                        {progressPercent && <ProgressBar now={progressPercent} label={`${progressPercent}%`} />}
-                        <br />
-
+                        <br/>
                         <button type="submit" className="btn btn-primary">
                             Submit
                         </button>
+                        <Link to="/sign-up">
+                            <button className="btn btn-danger" style={{ marginLeft: "2%" }}>Cancel</button>
+                        </Link>
                     </form>
                 </div>
             </div>

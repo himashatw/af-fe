@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from '../../services/axios';
-import { useHistory } from 'react-router-dom';
+import { useHistory,Link } from 'react-router-dom';
 
 const createAttendee = (props) => {
     //const history = useHistory();
@@ -117,6 +117,9 @@ const createAttendee = (props) => {
                         </div>
                         <br />
                         <button type="submit" className="btn btn-primary">Submit</button>
+                        <Link to = "/sign-up">
+                        <button className="btn btn-danger" style={{ marginLeft: "2%" }}>Cancel</button>
+                        </Link>
                     </form>
                 </div>
             </div>

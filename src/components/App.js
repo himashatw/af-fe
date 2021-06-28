@@ -9,6 +9,7 @@ import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
 import viewResearches from "./Reviewer/viewResearches";
 import CreateWsConductor from "../components/Users/CreateWsConductor";
+import UserRegistrationButton from "./Users/UserRegistrationButton/UserRegistrationButton";
 import AddSpeaker from "./EditorWorkspace/AddSpeaker";
 import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
 import AdminNavBar from "./Admin/AdminNavBar/AdminNavBar";
@@ -36,11 +37,15 @@ const App = () => {
           <Route exact path="/editor/dashboard">
             <EditorDashboard />
           </Route>
+          <Route exact path="/sign-up">
+            <UserRegistrationButton />
+          </Route>
           <Route exact path="/editor/addSpeaker">
             <AddSpeaker />
           </Route>
           <Route exact path="/editor/viewSpeaker">
             <ViewSpeaker />
+          </Route>
           <Route exact path="/admin">
             <AdminNavBar />
             <Home />
