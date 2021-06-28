@@ -27,34 +27,42 @@ const Header = () => {
   return (
     <div>
       <>
-        <nav className="navbar">
-          <div className="navbar-container">
-            <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+        <nav className="navbarheader">
+          <div className="navbar-containerheader">
+            <Link
+              to="/"
+              className="navbar-logoheader"
+              onClick={closeMobileMenu}
+            >
               CMS
               <i className="fab fa-typo3" />
             </Link>
-            <div className="menu-icon" onClick={handleClick}>
+            <div className="menu-iconheader" onClick={handleClick}>
               <i className={click ? "fas fa-times" : "fas fa-bars"} />
             </div>
-            <ul className={click ? "nav-menu active" : "nav-menu"}>
-              <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+            <ul className={click ? "nav-menuheader active" : "nav-menuheader"}>
+              <li className="nav-itemheader">
+                <Link
+                  to="/"
+                  className="nav-linksheader"
+                  onClick={closeMobileMenu}
+                >
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav--itemheader">
                 <Link
                   to="/news"
-                  className="nav-links"
+                  className="nav-linksheader"
                   onClick={closeMobileMenu}
                 >
                   News
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-itemheader">
                 <Link
                   to="/articles"
-                  className="nav-links"
+                  className="nav-linksheader"
                   onClick={closeMobileMenu}
                 >
                   Speakers
@@ -64,7 +72,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/signup"
-                  className="nav-links-mobile"
+                  className="nav-links-mobileheader"
                   onClick={closeMobileMenu}
                 >
                   Sign Up
