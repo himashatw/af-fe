@@ -7,8 +7,8 @@ import CreateReseacher from "../components/Users/CreateResearcher";
 import EditorDashboard from "./EditorWorkspace/EditorDashboard";
 import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
+import viewResearches from './Reviewer/viewResearches'
 import CreateWsConductor from "../components/Users/CreateWsConductor";
-
 
 const App = () => {
   return (
@@ -22,6 +22,7 @@ const App = () => {
           <Route exact path="/user/attendee">
             <CreateAttendee />
           </Route>
+          <Route path="/viewResearches" component ={viewResearches}/>
           <Route exact path="/user/researcher">
             <CreateReseacher />
           </Route>
