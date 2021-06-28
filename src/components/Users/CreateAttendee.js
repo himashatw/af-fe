@@ -28,7 +28,7 @@ const createAttendee = (props) => {
                 alert('Registered Successfully');
                 //props.history.push('/login');
             }).catch(error => {
-                alert(error.response.data.error);
+                console.log(error.response.data.error);
             })
     }
 
@@ -53,9 +53,10 @@ const createAttendee = (props) => {
                                 className="form-control"
                                 id="fullName"
                                 name="fullName"
+                                required
                                 value={attendee.fullName}
                                 onChange={onChange}
-                                placeholder="Enter Your Full Name"
+                                placeholder="John Doe"
                             />
                         </div>
                         <div className="mb-3">
@@ -65,9 +66,10 @@ const createAttendee = (props) => {
                                 className="form-control"
                                 id="email"
                                 name="email"
+                                required
                                 value={attendee.email}
                                 onChange={onChange}
-                                placeholder="Enter Your Email"
+                                placeholder="abc@gmail.com"
                             />
                         </div>
                         <div className="mb-3">
@@ -77,9 +79,12 @@ const createAttendee = (props) => {
                                 className="form-control"
                                 id="password"
                                 name="password"
+                                required
                                 value={attendee.password}
                                 onChange={onChange}
-                                placeholder="Enter Your Password"
+                                placeholder="minimum 8 characters"
+                                pattern="(?=.*\[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
                             />
                         </div>
                         <div className="mb-3">
@@ -89,9 +94,13 @@ const createAttendee = (props) => {
                                 className="form-control"
                                 id="phoneNo"
                                 name="phoneNo"
+                                required
                                 value={attendee.phoneNo}
                                 onChange={onChange}
-                                placeholder="Enter Your Mobile Number"
+                                placeholder="071 555 5554"
+                                pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                                title="Must contain at least 10  numbers"
+                                maxLength="10"
                             />
                         </div>
                         <div className="mb-3">
@@ -101,6 +110,7 @@ const createAttendee = (props) => {
                                 className="form-control"
                                 id="payment"
                                 name="payment"
+                                required
                                 value={attendee.payment}
                                 onChange={onChange}
                             />

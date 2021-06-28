@@ -7,22 +7,26 @@ import CreateReseacher from "../components/Users/CreateResearcher";
 import EditorDashboard from "./EditorWorkspace/EditorDashboard";
 import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
+import viewResearches from "./Reviewer/viewResearches";
 import CreateWsConductor from "../components/Users/CreateWsConductor";
 import AddSpeaker from "./EditorWorkspace/AddSpeaker";
 import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
+import AdminNavBar from "./Admin/AdminNavBar/AdminNavBar";
+import Home from "../components/Admin/Pages/Home";
 
 const App = () => {
   return (
     <Router>
       <div>
-        <Header />
         <Switch>
           <Route exact path="/">
+            <Header />
             <HeroSection />
           </Route>
           <Route exact path="/user/attendee">
             <CreateAttendee />
           </Route>
+          <Route path="/viewResearches" component={viewResearches} />
           <Route exact path="/user/researcher">
             <CreateReseacher />
           </Route>
@@ -37,6 +41,9 @@ const App = () => {
           </Route>
           <Route exact path="/editor/viewSpeaker">
             <ViewSpeaker />
+          <Route exact path="/admin">
+            <AdminNavBar />
+            <Home />
           </Route>
         </Switch>
       </div>
