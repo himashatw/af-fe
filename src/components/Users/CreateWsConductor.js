@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from '../../services/axios';
 import {ProgressBar} from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { useHistory,Link } from 'react-router-dom';
 
 const CreateWsConductor = (props) => {
     //const history = useHistory();
@@ -9,6 +9,9 @@ const CreateWsConductor = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
+    const [workshopTitle, setworkshopTitle] = useState("");
+    const [workshopData, setworkshopData] = useState("");
+    const [workshopTime, setworkshopTime] = useState("");
     const [uploads, setUploads] = useState("");
 
     const [progressPercent, setProgressPercent] = useState();
@@ -36,6 +39,9 @@ const CreateWsConductor = (props) => {
         setEmail("");
         setPassword("");
         setPhoneNo("");
+        setworkshopTitle("")
+        setworkshopData("")
+        setworkshopTime("")
 
         axios.post("/workshopcon/add", formData, {
             headers: {
@@ -146,6 +152,9 @@ const CreateWsConductor = (props) => {
                         <button type="submit" className="btn btn-primary">
                             Submit
                         </button>
+                        <Link to = "/sign-up">
+                        <button className="btn btn-danger" style={{ marginLeft: "2%" }}>Cancel</button>
+                        </Link>
                     </form>
                 </div>
             </div>

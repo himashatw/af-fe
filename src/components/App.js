@@ -9,6 +9,7 @@ import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
 import viewResearches from './Reviewer/viewResearches'
 import CreateWsConductor from "../components/Users/CreateWsConductor";
+import UserRegistrationButton from "../components/UserRegistrationButton/UserRegistrationButton";
 
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
           <Route exact path="/user/attendee">
             <CreateAttendee />
           </Route>
-          <Route path="/viewResearches" component ={viewResearches}/>
+          <Route path="/viewResearches" component={viewResearches} />
           <Route exact path="/user/researcher">
             <CreateReseacher />
           </Route>
@@ -31,6 +32,9 @@ const App = () => {
           </Route>
           <Route exact path="/editor">
             <EditorDashboard />
+          </Route>
+          <Route exact path="/sign-up">
+            <UserRegistrationButton />
           </Route>
         </Switch>
       </div>
