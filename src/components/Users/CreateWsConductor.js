@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from '../../services/axios';
+import {ProgressBar} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
 const CreateWsConductor = (props) => {
@@ -10,7 +11,7 @@ const CreateWsConductor = (props) => {
     const [phoneNo, setPhoneNo] = useState("");
     const [uploads, setUploads] = useState("");
 
-    const [progressPercent, setProgressPercent] = useState(0);
+    const [progressPercent, setProgressPercent] = useState();
     const [error, setError] = useState({
         found: false,
         message: ''
@@ -36,7 +37,15 @@ const CreateWsConductor = (props) => {
         setPassword("");
         setPhoneNo("");
 
-        axios.post("/workshopcon/add", formData)
+        axios.post("/workshopcon/add", formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+            onUploadProgress: data => {
+                //Set the progress value to show the progress bar
+                setProgressPercent(Math.round((100 * data.loaded) / data.total))
+            }
+            })
             .then((res) => {
                 resdata = res.data.message;
                 alert(resdata);
@@ -96,9 +105,9 @@ const CreateWsConductor = (props) => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 name="password"
-                                placeholder="minimum 4 characters"
-                                minLength="4"
-                                pattern="[0-9a-fA-F]{4,8}"
+                                placeholder="minimum 8 characters"
+                                pattern="(?=.*\[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
                             />
                         </div>
                         <div className="mb-3">
@@ -112,7 +121,8 @@ const CreateWsConductor = (props) => {
                                 onChange={(e) => setPhoneNo(e.target.value)}
                                 name="phoneNo"
                                 placeholder="071 555 5554"
-                                pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
+                                pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                                title="Must contain at least 10  numbers"
                                 maxLength="10"
                             />
                         </div>
@@ -130,6 +140,7 @@ const CreateWsConductor = (props) => {
                                 onChange={upload}
                             />
                         </div>
+                        {progressPercent && <ProgressBar now={progressPercent} label={`${progressPercent}%`} />}
                         <br />
 
                         <button type="submit" className="btn btn-primary">
