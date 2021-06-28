@@ -53,7 +53,7 @@ class viewResearches extends Component {
                             <h5>FullName :{value.fullName}</h5>
                             <h5>PhoneNo :{value.phoneNo}</h5>
                             <h5>Email :{value.email}</h5>
-                            <button className="btn btn-warning" onClick={event=>this.navigateDownload(event,value.uploads)}>Research paper</button>
+                            <button className="btn btn-success" onClick={event=>this.navigateDownload(event,value.uploads)}>Research paper</button>
                             <button className="btn btn-warning" onClick={event =>this.navigateApprove(event,value._id)}>Approve Research</button>
                             <button className="btn btn-danger"  onClick={event =>this.navigateDelete(event,value._id)}>Decline Research</button>
                         </div>
