@@ -10,7 +10,11 @@ const CreateReseacher = (props) => {
     const [phoneNo, setPhoneNo] = useState("");
     const [uploads, setUploads] = useState("");
 
-    //const [progressPercent, setProgressPercent] = useState(0);
+    const [progressPercent, setProgressPercent] = useState(0);
+    const [error, setError] = useState({
+            found: false,
+            message: ''
+        })
 
     const upload = e => {
         setUploads(e.target.files[0])
@@ -39,14 +43,13 @@ const CreateReseacher = (props) => {
                 //props.history.push('/')
             })
             .catch(err => {
-                console.log(err.response)
                 setError({
                     found: true,
                     message: err.response.data.errors,
                 })
             })
     }
-    
+
     return (
         <div className="container">
             <br />
@@ -56,8 +59,8 @@ const CreateReseacher = (props) => {
                 </div>
                 <div className="card-body">
                     <form onSubmit={onSubmit} encType="multipart/form-data">
-                        <div className="form-group">
-                            <label htmlFor="fullName">Full Name</label>
+                        <div className="mb-3">
+                            <label htmlFor="fullName" className="form-label">Full Name</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -66,10 +69,11 @@ const CreateReseacher = (props) => {
                                 value={fullName}
                                 onChange={(e) => setfullName(e.target.value)}
                                 name="fullName"
+                                placeholder="John Doe"
                             />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
+                        <div className="mb-3">
+                            <label htmlFor="email" className="form-label">Email</label>
                             <input
                                 type="email"
                                 className="form-control"
@@ -78,10 +82,11 @@ const CreateReseacher = (props) => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 name="email"
+                                placeholder="abc@gmail.com"
                             />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
+                        <div className="mb-3">
+                            <label htmlFor="password" className="form-label">Password</label>
                             <input
                                 type="password"
                                 className="form-control"
@@ -90,10 +95,13 @@ const CreateReseacher = (props) => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 name="password"
+                                placeholder="minimum 4 characters"
+                                minLength="4"
+                                pattern="[0-9a-fA-F]{4,8}"
                             />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="phoneNo">Mobile Number</label>
+                        <div className="mb-3">
+                            <label htmlFor="phoneNo" className="form-label">Mobile Number</label>
                             <input
                                 type="phoneNo"
                                 className="form-control"
@@ -102,10 +110,17 @@ const CreateReseacher = (props) => {
                                 value={phoneNo}
                                 onChange={(e) => setPhoneNo(e.target.value)}
                                 name="phoneNo"
+                                placeholder="071 555 5554"
+                                pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
+                                maxLength="10"
                             />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="upload">Upload your file</label><br />
+                        <div className="mb-3">
+                            {error.found &&<span className="alert-danger" role='alert'>
+                                {error.message}
+                            </span>}
+                            <br/>
+                            <label htmlFor="upload" className="form-label">Upload your file</label><br />
                             <input
                                 type="file"
                                 uploads="uploads"
