@@ -8,7 +8,8 @@ import EditorDashboard from "./EditorWorkspace/EditorDashboard";
 import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
 import CreateWsConductor from "../components/Users/CreateWsConductor";
-
+import AddSpeaker from "./EditorWorkspace/AddSpeaker";
+import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
 
 const App = () => {
   return (
@@ -28,8 +29,14 @@ const App = () => {
           <Route exact path="/user/wsconductor">
             <CreateWsConductor />
           </Route>
-          <Route exact path="/editor">
+          <Route exact path="/editor/dashboard">
             <EditorDashboard />
+          </Route>
+          <Route exact path="/editor/addSpeaker">
+            <AddSpeaker />
+          </Route>
+          <Route exact path="/editor/viewSpeaker">
+            <ViewSpeaker />
           </Route>
         </Switch>
       </div>
