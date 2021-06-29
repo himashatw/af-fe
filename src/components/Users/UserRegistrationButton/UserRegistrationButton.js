@@ -33,7 +33,7 @@ const UserRegistrationButton = () => {
                                     <Link to="/user/wsconductor">
                                         <button className="addbtn addbtn_Effect">Workshop Conductor</button>
                                     </Link>
-                                    <p>Required to add workshop title,time<br /> and data with uploads.</p>
+                                    <p>Required to add workshop title,time<br /> and date with uploads.</p>
                                 </div>
                             </td>
                         </tr>

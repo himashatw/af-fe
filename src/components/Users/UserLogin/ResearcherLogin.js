@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from '../../../services/axios';
 
-const AttendeeLogin = () => {
+const ResearcherLogin = () => {
 
     const history = useHistory();
     const [email, setEmail] = useState("");
@@ -16,15 +16,14 @@ const AttendeeLogin = () => {
             password
         }
 
-        axios.post("/attendee/login", logingUser)
+        axios.post("/reseacher/login", logingUser)
             .then(res => {
                 console.log(res.data.message)
                 console.log(res.status)
                 if (res.status == 200) {
                     alert(res.data.message)
-                    history.push('/attendee/dashboard')
+                    history.push('/researcher/dashboard')
                 } else {
-                    alert(res.data.message)
                     history.push('/')
                 }
             }).catch(error => {
@@ -37,7 +36,7 @@ const AttendeeLogin = () => {
             <br />
             <div className="card" style={{ width: "50%", marginLeft: "25%" }}>
                 <div className="card-header">
-                    <h4>Attendee Login</h4>
+                    <h4>Researcher Login</h4>
                 </div>
                 <div className="card-body">
                     <form onSubmit={onLogin}>
@@ -77,4 +76,4 @@ const AttendeeLogin = () => {
 
 }
 
-export default AttendeeLogin;
+export default ResearcherLogin;

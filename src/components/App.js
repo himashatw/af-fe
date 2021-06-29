@@ -23,6 +23,9 @@ import viewWorkshops from "./Reviewer/viewWorkshops";
 import AttendeeLogin from "./Users/UserLogin/AttendeeLogin";
 import downloadResearchs from "./DownloadPage/downloadResearchs"
 import downloadWorkshops from "./DownloadPage/downloadWorkshops"
+import ResearcherLogin from "./Users/UserLogin/ResearcherLogin";
+import WsConLogin from "./Users/UserLogin/WsConLogin";
+import UserNavBar from "./Users/UserNavBar/UserNavBar";
 
 const App = () => {
   return (
@@ -34,21 +37,24 @@ const App = () => {
             <HeroSection />
           </Route>
           <Route exact path="/user/attendee">
+            <UserNavBar />
             <CreateAttendee />
           </Route>
           <Route path="/reviewer/viewResearches" component={viewResearches} />
           <Route exact path="/user/researcher">
+            <UserNavBar />
             <CreateReseacher />
           </Route>
           <Route exact path="/user/wsconductor">
+            <UserNavBar />
             <CreateWsConductor />
           </Route>
           <Route exact path="/editor/dashboard">
             <EditorDashboard />
           </Route>
-          <Route path="/reviewer/viewWorkshops" component ={viewWorkshops}/>
-          <Route path="/downloads/Research" component ={downloadResearchs}/>
-          <Route path="/downloads/Workshops" component ={downloadWorkshops}/>
+          <Route path="/reviewer/viewWorkshops" component={viewWorkshops} />
+          <Route path="/downloads/Research" component={downloadResearchs} />
+          <Route path="/downloads/Workshops" component={downloadWorkshops} />
           <Route exact path="/sign-up">
             <UserRegistrationButton />
           </Route>
@@ -76,8 +82,17 @@ const App = () => {
             <AdminNavBar />
             <ApprovedNews />
           </Route>
-          <Route exact path="/attendee/login">
+          <Route exact path="/user/attendee/login">
+            <UserNavBar />
             <AttendeeLogin />
+          </Route>
+          <Route exact path="/user/researcher/login">
+            <UserNavBar />
+            <ResearcherLogin />
+          </Route>
+          <Route exact path="/user/wsconductor/login">
+            <UserNavBar />
+            <WsConLogin />
           </Route>
         </Switch>
       </div>
