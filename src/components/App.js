@@ -7,6 +7,15 @@ import CreateReseacher from "../components/Users/CreateResearcher";
 import EditorDashboard from "./EditorWorkspace/EditorDashboard";
 import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
+
+import viewResearches from './Reviewer/viewResearches'
+import CreateWsConductor from "../components/Users/CreateWsConductor";
+
+import AddSpeaker from "./EditorWorkspace/AddSpeaker";
+import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
+import AddNews from "./EditorWorkspace/AddNews";
+import ViewNews from "./EditorWorkspace/ViewNews";
+
 import viewResearches from "./Reviewer/viewResearches";
 import CreateWsConductor from "../components/Users/CreateWsConductor";
 import UserRegistrationButton from "./Users/UserRegistrationButton/UserRegistrationButton";
@@ -17,6 +26,7 @@ import Home from "../components/Admin/Pages/Home";
 import News from "./Admin/Pages/News";
 import ApprovedNews from "./Admin/Pages/ApprovedNews";
 import viewWorkshops from "./Reviewer/viewWorkshops";
+
 
 
 const App = () => {
@@ -50,6 +60,12 @@ const App = () => {
           </Route>
           <Route exact path="/editor/viewSpeaker">
             <ViewSpeaker />
+          </Route>
+          <Route exact path="/editor/addNews">
+            <AddNews />
+          </Route>
+          <Route exact path="/editor/viewNews">
+            <ViewNews />
           </Route>
           <Route exact path="/admin">
             <AdminNavBar />

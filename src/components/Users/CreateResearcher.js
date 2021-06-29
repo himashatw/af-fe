@@ -11,6 +11,11 @@ const CreateReseacher = (props) => {
     const [phoneNo, setPhoneNo] = useState("");
     const [uploads, setUploads] = useState("");
 
+    const [progressPercent, setProgressPercent] = useState(0);
+    const [error, setError] = useState({
+            found: false,
+            message: ''
+        })
     const [progressPercent, setProgressPercent] = useState();
     const [error, setError] = useState({
         found: false,
@@ -104,6 +109,9 @@ const CreateReseacher = (props) => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 name="password"
+                                placeholder="minimum 4 characters"
+                                minLength="4"
+                                pattern="[0-9a-fA-F]{4,8}"
                                 placeholder="minimum 8 characters"
                                 pattern="(?=.*\[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                 title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
@@ -120,12 +128,17 @@ const CreateReseacher = (props) => {
                                 onChange={(e) => setPhoneNo(e.target.value)}
                                 name="phoneNo"
                                 placeholder="071 555 5554"
+                                pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
                                 pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                                 title="Must contain at least 10  numbers"
                                 maxLength="10"
                             />
                         </div>
                         <div className="mb-3">
+                            {error.found &&<span className="alert-danger" role='alert'>
+                                {error.message}
+                            </span>}
+                            <br/>
                             {error.found && <span className="alert-danger" role='alert'>
                                 {error.message}
                             </span>}
