@@ -5,7 +5,8 @@ const ViewNews = () =>{
     return(
 <div className="card-header">
 <h4>View Conference News</h4>
-<div className="container" className="position-absolute top-50 start-50 translate-middle" >
+<div className="container">
+<div className="position-absolute top-50 start-50" style={{  marginLeft: "20%", marginTop:"10%" }}>
 <div  className="shadow p-3 mb-5 bg-body rounded" >
 <table class="table caption-top">
   <thead>
@@ -63,6 +64,7 @@ const ViewNews = () =>{
   </tbody>
 </table>
 
+ </div>
  </div>
  </div>
  </div>
