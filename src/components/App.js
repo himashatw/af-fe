@@ -17,7 +17,7 @@ import Home from "../components/Admin/Pages/Home";
 import News from "./Admin/Pages/News";
 import ApprovedNews from "./Admin/Pages/ApprovedNews";
 import viewWorkshops from "./Reviewer/viewWorkshops";
-
+import AttendeeLogin from "./Users/UserLogin/AttendeeLogin";
 
 const App = () => {
   return (
@@ -41,7 +41,7 @@ const App = () => {
           <Route exact path="/editor/dashboard">
             <EditorDashboard />
           </Route>
-          <Route path="/viewWorkshops" component ={viewWorkshops}/>
+          <Route path="/viewWorkshops" component={viewWorkshops} />
           <Route exact path="/sign-up">
             <UserRegistrationButton />
           </Route>
@@ -62,6 +62,9 @@ const App = () => {
           <Route exact path="/admin/approvednews">
             <AdminNavBar />
             <ApprovedNews />
+          </Route>
+          <Route exact path="/attendee/login">
+            <AttendeeLogin />
           </Route>
         </Switch>
       </div>
