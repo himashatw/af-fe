@@ -9,6 +9,7 @@ import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
 import viewResearches from './Reviewer/viewResearches'
 import CreateWsConductor from "../components/Users/CreateWsConductor";
+import viewWorkshops from "./Reviewer/viewWorkshops";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
           <Route exact path="/editor">
             <EditorDashboard />
           </Route>
+          <Route path="/viewWorkshops" component ={viewWorkshops}/>
         </Switch>
       </div>
     </Router>
