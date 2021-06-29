@@ -18,6 +18,19 @@ const AdminNavBar = () => {
           <Link to="#" className="topicon">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+          <div className="container my">
+            <center>
+              <h1
+                className="adminbar"
+                style={{
+                  color: "white",
+                  marginLeft: "80%",
+                }}
+              >
+                Admin
+              </h1>
+            </center>
+          </div>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
