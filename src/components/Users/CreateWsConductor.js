@@ -60,7 +60,7 @@ const CreateWsConductor = (props) => {
       .then((res) => {
         resdata = res.data.message;
         alert(resdata);
-        //props.history.push('/')
+        history.push('/user/wsconductor/login')
       })
       .catch((err) => {
         console.log(err.response.data.errors);
@@ -141,7 +141,7 @@ const CreateWsConductor = (props) => {
                 onChange={(e) => setPhoneNo(e.target.value)}
                 name="phoneNo"
                 placeholder="071 555 5554"
-                pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
+                pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                 maxLength="10"
               />
             </div>

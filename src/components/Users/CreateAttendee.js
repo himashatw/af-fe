@@ -26,7 +26,7 @@ const createAttendee = (props) => {
             .then(res => {
                 console.log(res.data);
                 alert('Registered Successfully');
-                //props.history.push('/login');
+                history.push('/user/attendee/login');
             }).catch(error => {
                 console.log(error.response.data.error);
             })
@@ -101,7 +101,6 @@ const createAttendee = (props) => {
                                 value={attendee.phoneNo}
                                 onChange={onChange}
                                 placeholder="071 555 5554"
-                                pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
                                 pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                                 title="Must contain at least 10  numbers"
                                 maxLength="10"

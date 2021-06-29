@@ -53,7 +53,7 @@ const CreateReseacher = (props) => {
       .then((res) => {
         resdata = res.data.message;
         alert(resdata);
-        //props.history.push('/')
+        history.push('/user/researcher/login');
       })
       .catch((err) => {
         setError({
@@ -135,7 +135,6 @@ const CreateReseacher = (props) => {
                 onChange={(e) => setPhoneNo(e.target.value)}
                 name="phoneNo"
                 placeholder="071 555 5554"
-                pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
                 pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                 title="Must contain at least 10  numbers"
                 maxLength="10"
