@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from '../../services/axios';
 import {ProgressBar} from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { useHistory,Link } from 'react-router-dom';
 
 const CreateReseacher = (props) => {
     //const history = useHistory();
@@ -9,8 +9,14 @@ const CreateReseacher = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
+    const [approve,setapprove]= useState(false);
     const [uploads, setUploads] = useState("");
 
+    const [progressPercent, setProgressPercent] = useState(0);
+    const [error, setError] = useState({
+            found: false,
+            message: ''
+        })
     const [progressPercent, setProgressPercent] = useState();
     const [error, setError] = useState({
         found: false,
@@ -30,6 +36,7 @@ const CreateReseacher = (props) => {
         formData.append("email", email);
         formData.append("password", password);
         formData.append("phoneNo", phoneNo);
+        formData.append("approve",approve);
         formData.append("uploads", uploads);
 
         setfullName("");
@@ -104,6 +111,9 @@ const CreateReseacher = (props) => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 name="password"
+                                placeholder="minimum 4 characters"
+                                minLength="4"
+                                pattern="[0-9a-fA-F]{4,8}"
                                 placeholder="minimum 8 characters"
                                 pattern="(?=.*\[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                 title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
@@ -120,12 +130,17 @@ const CreateReseacher = (props) => {
                                 onChange={(e) => setPhoneNo(e.target.value)}
                                 name="phoneNo"
                                 placeholder="071 555 5554"
+                                pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
                                 pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                                 title="Must contain at least 10  numbers"
                                 maxLength="10"
                             />
                         </div>
                         <div className="mb-3">
+                            {error.found &&<span className="alert-danger" role='alert'>
+                                {error.message}
+                            </span>}
+                            <br/>
                             {error.found && <span className="alert-danger" role='alert'>
                                 {error.message}
                             </span>}
@@ -145,6 +160,9 @@ const CreateReseacher = (props) => {
                         <button type="submit" className="btn btn-primary">
                             Submit
                         </button>
+                        <Link to = "/sign-up">
+                        <button className="btn btn-danger" style={{ marginLeft: "2%" }}>Cancel</button>
+                        </Link>
                     </form>
                 </div>
             </div>

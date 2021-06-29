@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from '../../services/axios';
-import { useHistory } from 'react-router-dom';
+import { useHistory,Link } from 'react-router-dom';
 
 const createAttendee = (props) => {
     //const history = useHistory();
@@ -82,6 +82,9 @@ const createAttendee = (props) => {
                                 required
                                 value={attendee.password}
                                 onChange={onChange}
+                                placeholder="minimum 4 characters"
+                                minLength="4"
+                                pattern="[0-9a-fA-F]{4,8}"
                                 placeholder="minimum 8 characters"
                                 pattern="(?=.*\[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                 title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
@@ -98,6 +101,7 @@ const createAttendee = (props) => {
                                 value={attendee.phoneNo}
                                 onChange={onChange}
                                 placeholder="071 555 5554"
+                                pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
                                 pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                                 title="Must contain at least 10  numbers"
                                 maxLength="10"
@@ -117,6 +121,9 @@ const createAttendee = (props) => {
                         </div>
                         <br />
                         <button type="submit" className="btn btn-primary">Submit</button>
+                        <Link to = "/sign-up">
+                        <button className="btn btn-danger" style={{ marginLeft: "2%" }}>Cancel</button>
+                        </Link>
                     </form>
                 </div>
             </div>

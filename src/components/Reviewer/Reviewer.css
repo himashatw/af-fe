@@ -1,0 +1,14 @@
+
+/* The alert message box */
+.research-alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.research-content{
+  /* background: url('../../../public/images/img-research-new.jpg') center center/cover no-repeat; */
+   height: 100vh;
+  width: 100%;
+}
