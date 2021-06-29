@@ -36,7 +36,7 @@ const slideNextKeyBoard = (e) => {
 
 const SlideShow = ({ slideData, slideTitle }) => {
   return (
-    <div className="past-speaker-container">
+    <div className="past-speaker-container" style={{ zIndex: "1000" }}>
       <h4>{slideTitle}</h4>
       <div className="nav-button-wrapper">
         <div className="view-more">View More</div>
