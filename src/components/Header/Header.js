@@ -34,7 +34,7 @@ const Header = () => {
               className="navbar-logoheader"
               onClick={closeMobileMenu}
             >
-              CMS
+              ICAF
               <i className="fab fa-typo3" />
             </Link>
             <div className="menu-iconheader" onClick={handleClick}>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import SlideShow from "../SlideShow/SlideShow";
-import speakers from "./Speaker.json";
 import axios from "../../../services/axios";
 
 function News() {

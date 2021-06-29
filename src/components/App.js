@@ -7,7 +7,7 @@ import CreateReseacher from "../components/Users/CreateResearcher";
 import EditorDashboard from "./EditorWorkspace/EditorDashboard";
 import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
-import viewResearches from './Reviewer/viewResearches'
+import viewResearches from "./Reviewer/viewResearches";
 import CreateWsConductor from "../components/Users/CreateWsConductor";
 import AddSpeaker from "./EditorWorkspace/AddSpeaker";
 import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
@@ -26,6 +26,7 @@ import downloadWorkshops from "./DownloadPage/downloadWorkshops"
 import ResearcherLogin from "./Users/UserLogin/ResearcherLogin";
 import WsConLogin from "./Users/UserLogin/WsConLogin";
 import UserNavBar from "./Users/UserNavBar/UserNavBar";
+import Stats from "./Admin/Pages/Stats";
 
 const App = () => {
   return (
@@ -93,6 +94,10 @@ const App = () => {
           <Route exact path="/user/wsconductor/login">
             <UserNavBar />
             <WsConLogin />
+            </Route>
+          <Route exact path="/admin/stats">
+            <AdminNavBar />
+            <Stats />
           </Route>
         </Switch>
       </div>
