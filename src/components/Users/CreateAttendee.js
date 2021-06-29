@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from '../../services/axios';
-import { useHistory } from 'react-router-dom';
+import { useHistory,Link } from 'react-router-dom';
 
 const createAttendee = (props) => {
     //const history = useHistory();
@@ -28,7 +28,7 @@ const createAttendee = (props) => {
                 alert('Registered Successfully');
                 //props.history.push('/login');
             }).catch(error => {
-                alert(error.response.data.error);
+                console.log(error.response.data.error);
             })
     }
 
@@ -53,6 +53,7 @@ const createAttendee = (props) => {
                                 className="form-control"
                                 id="fullName"
                                 name="fullName"
+                                required
                                 value={attendee.fullName}
                                 onChange={onChange}
                                 placeholder="John Doe"
@@ -65,6 +66,7 @@ const createAttendee = (props) => {
                                 className="form-control"
                                 id="email"
                                 name="email"
+                                required
                                 value={attendee.email}
                                 onChange={onChange}
                                 placeholder="abc@gmail.com"
@@ -77,11 +79,12 @@ const createAttendee = (props) => {
                                 className="form-control"
                                 id="password"
                                 name="password"
+                                required
                                 value={attendee.password}
                                 onChange={onChange}
-                                placeholder="minimum 4 characters"
-                                minLength="4"
-                                pattern="[0-9a-fA-F]{4,8}"
+                                placeholder="minimum 8 characters"
+                                pattern="(?=.*\[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
                             />
                         </div>
                         <div className="mb-3">
@@ -91,10 +94,12 @@ const createAttendee = (props) => {
                                 className="form-control"
                                 id="phoneNo"
                                 name="phoneNo"
+                                required
                                 value={attendee.phoneNo}
                                 onChange={onChange}
                                 placeholder="071 555 5554"
-                                pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
+                                pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                                title="Must contain at least 10  numbers"
                                 maxLength="10"
                             />
                         </div>
@@ -105,12 +110,16 @@ const createAttendee = (props) => {
                                 className="form-control"
                                 id="payment"
                                 name="payment"
+                                required
                                 value={attendee.payment}
                                 onChange={onChange}
                             />
                         </div>
                         <br />
                         <button type="submit" className="btn btn-primary">Submit</button>
+                        <Link to = "/sign-up">
+                        <button className="btn btn-danger" style={{ marginLeft: "2%" }}>Cancel</button>
+                        </Link>
                     </form>
                 </div>
             </div>
