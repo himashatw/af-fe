@@ -145,27 +145,6 @@ const CreateWsConductor = (props) => {
                 maxLength="10"
               />
             </div>
-            <div className="mb-3">
-              {error.found && (
-                <span className="alert-danger" role="alert">
-                  {error.message}
-                </span>
-              )}
-              <br />
-              <label htmlFor="upload" className="form-label">
-                Upload your file
-              </label>
-              <br />
-              <input
-                type="file"
-                uploads="uploads"
-                required
-                className="form-control-file"
-                onChange={upload}
-              />
-              pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="Must contain at least 10
-              numbers" maxLength="10" />
-            </div>
             {/* //card */}
             <div className="card">
               <div className="card-header">
