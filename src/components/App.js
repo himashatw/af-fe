@@ -7,7 +7,7 @@ import CreateReseacher from "../components/Users/CreateResearcher";
 import EditorDashboard from "./EditorWorkspace/EditorDashboard";
 import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
-import viewResearches from './Reviewer/viewResearches'
+import viewResearches from "./Reviewer/viewResearches";
 import CreateWsConductor from "../components/Users/CreateWsConductor";
 import AddSpeaker from "./EditorWorkspace/AddSpeaker";
 import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
@@ -21,8 +21,9 @@ import News from "./Admin/Pages/News";
 import ApprovedNews from "./Admin/Pages/ApprovedNews";
 import viewWorkshops from "./Reviewer/viewWorkshops";
 import AttendeeLogin from "./Users/UserLogin/AttendeeLogin";
-import downloadResearchs from "./DownloadPage/downloadResearchs"
-import downloadWorkshops from "./DownloadPage/downloadWorkshops"
+import downloadResearchs from "./DownloadPage/downloadResearchs";
+import downloadWorkshops from "./DownloadPage/downloadWorkshops";
+import Stats from "./Admin/Pages/Stats";
 
 const App = () => {
   return (
@@ -46,9 +47,9 @@ const App = () => {
           <Route exact path="/editor/dashboard">
             <EditorDashboard />
           </Route>
-          <Route path="/reviewer/viewWorkshops" component ={viewWorkshops}/>
-          <Route path="/downloads/Research" component ={downloadResearchs}/>
-          <Route path="/downloads/Workshops" component ={downloadWorkshops}/>
+          <Route path="/reviewer/viewWorkshops" component={viewWorkshops} />
+          <Route path="/downloads/Research" component={downloadResearchs} />
+          <Route path="/downloads/Workshops" component={downloadWorkshops} />
           <Route exact path="/sign-up">
             <UserRegistrationButton />
           </Route>
@@ -78,6 +79,10 @@ const App = () => {
           </Route>
           <Route exact path="/attendee/login">
             <AttendeeLogin />
+          </Route>
+          <Route exact path="/admin/stats">
+            <AdminNavBar />
+            <Stats />
           </Route>
         </Switch>
       </div>
