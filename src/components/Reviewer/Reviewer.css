@@ -1,11 +1,14 @@
-.research-container{
-    background: url('../../../public/images/img-research.jpg') center center/cover no-repeat;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
-    object-fit: contain;
+
+/* The alert message box */
+.research-alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.research-content{
+  /* background: url('../../../public/images/img-research-new.jpg') center center/cover no-repeat; */
+   height: 100vh;
+  width: 100%;
 }

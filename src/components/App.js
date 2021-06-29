@@ -15,6 +15,8 @@ import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
 import AdminNavBar from "./Admin/AdminNavBar/AdminNavBar";
 import Home from "../components/Admin/Pages/Home";
 import viewWorkshops from "./Reviewer/viewWorkshops";
+import downloadResearchs from "./DownloadPage/downloadResearchs"
+import downloadWorkshops from "./DownloadPage/downloadWorkshops"
 
 const App = () => {
   return (
@@ -28,7 +30,7 @@ const App = () => {
           <Route exact path="/user/attendee">
             <CreateAttendee />
           </Route>
-          <Route path="/viewResearches" component={viewResearches} />
+          <Route path="/reviewer/viewResearches" component={viewResearches} />
           <Route exact path="/user/researcher">
             <CreateReseacher />
           </Route>
@@ -38,7 +40,9 @@ const App = () => {
           <Route exact path="/editor/dashboard">
             <EditorDashboard />
           </Route>
-          <Route path="/viewWorkshops" component ={viewWorkshops}/>
+          <Route path="/reviewer/viewWorkshops" component ={viewWorkshops}/>
+          <Route path="/downloads/Research" component ={downloadResearchs}/>
+          <Route path="/downloads/Workshops" component ={downloadWorkshops}/>
           <Route exact path="/sign-up">
             <UserRegistrationButton />
           </Route>

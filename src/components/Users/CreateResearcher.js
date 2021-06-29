@@ -9,6 +9,7 @@ const CreateReseacher = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
+    const [approve,setapprove]= useState(false);
     const [uploads, setUploads] = useState("");
 
     const [progressPercent, setProgressPercent] = useState();
@@ -30,6 +31,7 @@ const CreateReseacher = (props) => {
         formData.append("email", email);
         formData.append("password", password);
         formData.append("phoneNo", phoneNo);
+        formData.append("approve",approve);
         formData.append("uploads", uploads);
 
         setfullName("");
