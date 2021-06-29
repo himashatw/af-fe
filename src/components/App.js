@@ -39,6 +39,19 @@ const App = () => {
             <EditorDashboard />
           </Route>
           <Route path="/viewWorkshops" component ={viewWorkshops}/>
+          <Route exact path="/sign-up">
+            <UserRegistrationButton />
+          </Route>
+          <Route exact path="/editor/addSpeaker">
+            <AddSpeaker />
+          </Route>
+          <Route exact path="/editor/viewSpeaker">
+            <ViewSpeaker />
+          </Route>
+          <Route exact path="/admin">
+            <AdminNavBar />
+            <Home />
+          </Route>
         </Switch>
       </div>
     </Router>
