@@ -201,6 +201,7 @@ const CreateWsConductor = (props) => {
                     </span>
                   )}
                   <br />
+                  <small style={{color:"red"}}>Upload Only Pdf Format</small><br/>
                   <label htmlFor="upload" className="form-label">
                     Upload your file
                   </label>
