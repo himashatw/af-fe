@@ -14,6 +14,7 @@ import AddSpeaker from "./EditorWorkspace/AddSpeaker";
 import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
 import AdminNavBar from "./Admin/AdminNavBar/AdminNavBar";
 import Home from "../components/Admin/Pages/Home";
+import viewWorkshops from "./Reviewer/viewWorkshops";
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
           <Route exact path="/editor/dashboard">
             <EditorDashboard />
           </Route>
+          <Route path="/viewWorkshops" component ={viewWorkshops}/>
           <Route exact path="/sign-up">
             <UserRegistrationButton />
           </Route>
