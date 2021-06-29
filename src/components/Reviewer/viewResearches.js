@@ -83,7 +83,7 @@ export default viewResearches;
 import React, { Component } from 'react';
 import axios from '../../services/axios'
 import { pdfDownload } from './pdfDownload'
-import "./Reviewer.css"
+ import "./Reviewer.css"
 
 class viewResearches extends Component {
     constructor(props) {
@@ -101,7 +101,7 @@ class viewResearches extends Component {
 
     }
     componentDidMount() {
-        axios.get('/reviewer/getResearchPapers')
+        axios.get('/reviewer/notApprovedResearch')
             .then(res => {
                 console.log(res.data)
                 this.setState({ researches: res.data.data })
@@ -115,33 +115,41 @@ class viewResearches extends Component {
     }
 
     navigateApprove(event, id) {
-        axios.get(`/reviewer/getResearch/${id}`).then(res => {
-
-            console.log(res.data);
-            console.log(res.data.data.uploads)
-
-            const formdata = new FormData();
-            formdata.append("researchersfullName", res.data.data.fullName);
-            formdata.append("researchersemail", res.data.data.email);
-            formdata.append("researchersphoneNo", res.data.data.phoneNo);
-            formdata.append("content", res.data.data.uploads);
-            console.log(formdata)
-
-            axios.post(`/reviewer/approvedResearchers`, formdata).then(res => {
-                console.log(res.data.data.content);
+        axios.put(`reviewer/approveResearch/${id}`)
+            .then(res => {
+                alert("Approve Research?")
+                console.log(res.data)
+                window.location.reload();
             }).catch(err => {
                 console.log(err);
             })
-        }).catch(err => {
-            console.log(err);
-        })
-        axios.delete(`/reviewer/deleteResearch/${id}`).then(res => {
-            alert("Approve Research?")
-            console.log(res.data)
-            window.location.reload();
-        }).catch(err => {
-            console.log(err);
-        })
+        // axios.get(`/reviewer/getResearch/${id}`).then(res => {
+
+        //     console.log(res.data);
+        //     console.log(res.data.data.uploads)
+
+        //     const formdata = new FormData();
+        //     formdata.append("researchersfullName", res.data.data.fullName);
+        //     formdata.append("researchersemail", res.data.data.email);
+        //     formdata.append("researchersphoneNo", res.data.data.phoneNo);
+        //     formdata.append("content", res.data.data.uploads);
+        //     console.log(formdata)
+
+        //     axios.post(`/reviewer/approvedResearchers`, formdata).then(res => {
+        //         console.log(res.data.data.content);
+        //     }).catch(err => {
+        //         console.log(err);
+        //     })
+        // }).catch(err => {
+        //     console.log(err);
+        // })
+        // axios.delete(`/reviewer/deleteResearch/${id}`).then(res => {
+        //     alert("Approve Research?")
+        //     console.log(res.data)
+        //     window.location.reload();
+        // }).catch(err => {
+        //     console.log(err);
+        // })
     }
 
     navigateDelete(event, id) {
@@ -155,11 +163,16 @@ class viewResearches extends Component {
     }
     render() {
         if (this.state.researches.length == 0) {
-            return <center><h1>There is no research paper available!</h1></center>;
+            return (
+                <div className="research-content">
+                    <div class="research-alert">
+                        <h3> There is no research paper available!</h3>
+                    </div>
+                </div>);
         }
 
         return (
-            <div className="research-container">
+            <div className="research-content">
                 <div className="container">
                     <center><h5>View Research</h5></center>
                     {this.state.researches.length > 0 && this.state.researches.map((value, index) => (
