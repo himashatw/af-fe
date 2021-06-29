@@ -19,7 +19,7 @@ export const SidebarData = [
   {
     title: "Approved News",
     path: "/admin/approvednews",
-    icon: <FaIcons.FaCartPlus />,
+    icon: <IoIcons.IoIosPaper />,
     cName: "nav-text",
   },
   {

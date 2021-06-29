@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import SlideShow from "../SlideShow/SlideShow";
-import speakers from "./Speaker.json";
 import axios from "../../../services/axios";
 
 function Reports() {
@@ -20,7 +19,11 @@ function Reports() {
       <div className="container mt-2" style={{ border: "1px solid black" }}>
         <>
           {news.length && (
-            <SlideShow slideData={news} slideTitle={"Current List"} />
+            <SlideShow
+              slideData={news}
+              slideTitle={"Current List"}
+              type={"approved"}
+            />
           )}
         </>
       </div>
