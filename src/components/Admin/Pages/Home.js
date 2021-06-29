@@ -3,8 +3,8 @@ import React from "react";
 function Home() {
   return (
     <div className="home">
-      <div className="container" style={{ margin: "auto 40%" }}>
-        <h1>Hssomddsssssssssssssssddddddde</h1>
+      <div className="container" style={{ border: "1px solid grey" }}>
+        gg ggg gg
       </div>
     </div>
   );

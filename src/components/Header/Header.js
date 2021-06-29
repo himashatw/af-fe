@@ -59,7 +59,7 @@ const Header = () => {
                   News
                 </Link>
               </li>
-              <li className="nav-itemheader">
+              <li className="nav--itemheader">
                 <Link
                   to="/articles"
                   className="nav-linksheader"

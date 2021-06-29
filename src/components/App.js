@@ -14,9 +14,12 @@ import AddSpeaker from "./EditorWorkspace/AddSpeaker";
 import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
 import AdminNavBar from "./Admin/AdminNavBar/AdminNavBar";
 import Home from "../components/Admin/Pages/Home";
+import News from "./Admin/Pages/News";
+import ApprovedNews from "./Admin/Pages/ApprovedNews";
 import viewWorkshops from "./Reviewer/viewWorkshops";
 import downloadResearchs from "./DownloadPage/downloadResearchs"
 import downloadWorkshops from "./DownloadPage/downloadWorkshops"
+
 
 const App = () => {
   return (
@@ -55,6 +58,14 @@ const App = () => {
           <Route exact path="/admin">
             <AdminNavBar />
             <Home />
+          </Route>
+          <Route exact path="/admin/news">
+            <AdminNavBar />
+            <News />
+          </Route>
+          <Route exact path="/admin/approvednews">
+            <AdminNavBar />
+            <ApprovedNews />
           </Route>
         </Switch>
       </div>
