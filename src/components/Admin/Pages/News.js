@@ -11,6 +11,7 @@ function News() {
         setNews(response.data.result);
       });
     };
+    getData();
   }, []);
   return (
     <div className="news">
@@ -21,13 +22,17 @@ function News() {
       </div>
       <div className="container mt-2" style={{ border: "1px solid black" }}>
         <>
-          <SlideShow slideData={speakers} slideTitle={"Pending News"} />
+          {news.length && (
+            <SlideShow
+              slideData={news}
+              slideTitle={"Pending News"}
+              type={"pending"}
+            />
+          )}
         </>
       </div>
       <div className="container mt-2" style={{ border: "1px solid black" }}>
-        <>
-          {/* <SlideShow slideData={speakers} slideTitle={"Approved News"} /> */}
-        </>
+        <></>
       </div>
     </div>
   );

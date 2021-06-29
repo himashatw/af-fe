@@ -1,6 +1,6 @@
 import React from "react";
 
-const NewsCard = ({ title, description, imgURL, id }) => {
+const PendingNewsCard = ({ title, description, imgURL, id }) => {
   const btnHandler = () => {
     alert(id);
   };
@@ -23,11 +23,13 @@ const NewsCard = ({ title, description, imgURL, id }) => {
           <p className="card-text" style={{ color: "black" }}>
             {description}
           </p>
-          <button onClick={btnHandler}>remove</button>
+          <center>
+            <button onClick={btnHandler}>Approve</button>
+          </center>
         </div>
       </div>
     </div>
   );
 };
 
-export default NewsCard;
+export default PendingNewsCard;
