@@ -7,17 +7,22 @@ import CreateReseacher from "../components/Users/CreateResearcher";
 import EditorDashboard from "./EditorWorkspace/EditorDashboard";
 import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
-import viewResearches from "./Reviewer/viewResearches";
+import viewResearches from './Reviewer/viewResearches'
 import CreateWsConductor from "../components/Users/CreateWsConductor";
-import UserRegistrationButton from "./Users/UserRegistrationButton/UserRegistrationButton";
 import AddSpeaker from "./EditorWorkspace/AddSpeaker";
 import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
+import AddNews from "./EditorWorkspace/AddNews";
+import ViewNews from "./EditorWorkspace/ViewNews";
+import viewResearches from "./Reviewer/viewResearches";
+import UserRegistrationButton from "./Users/UserRegistrationButton/UserRegistrationButton";
 import AdminNavBar from "./Admin/AdminNavBar/AdminNavBar";
 import Home from "../components/Admin/Pages/Home";
 import News from "./Admin/Pages/News";
 import ApprovedNews from "./Admin/Pages/ApprovedNews";
 import viewWorkshops from "./Reviewer/viewWorkshops";
 import AttendeeLogin from "./Users/UserLogin/AttendeeLogin";
+import downloadResearchs from "./DownloadPage/downloadResearchs"
+import downloadWorkshops from "./DownloadPage/downloadWorkshops"
 
 const App = () => {
   return (
@@ -31,7 +36,7 @@ const App = () => {
           <Route exact path="/user/attendee">
             <CreateAttendee />
           </Route>
-          <Route path="/viewResearches" component={viewResearches} />
+          <Route path="/reviewer/viewResearches" component={viewResearches} />
           <Route exact path="/user/researcher">
             <CreateReseacher />
           </Route>
@@ -41,7 +46,9 @@ const App = () => {
           <Route exact path="/editor/dashboard">
             <EditorDashboard />
           </Route>
-          <Route path="/viewWorkshops" component={viewWorkshops} />
+          <Route path="/reviewer/viewWorkshops" component ={viewWorkshops}/>
+          <Route path="/downloads/Research" component ={downloadResearchs}/>
+          <Route path="/downloads/Workshops" component ={downloadWorkshops}/>
           <Route exact path="/sign-up">
             <UserRegistrationButton />
           </Route>
@@ -50,6 +57,12 @@ const App = () => {
           </Route>
           <Route exact path="/editor/viewSpeaker">
             <ViewSpeaker />
+          </Route>
+          <Route exact path="/editor/addNews">
+            <AddNews />
+          </Route>
+          <Route exact path="/editor/viewNews">
+            <ViewNews />
           </Route>
           <Route exact path="/admin">
             <AdminNavBar />

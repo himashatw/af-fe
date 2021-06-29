@@ -1,16 +1,24 @@
 import React from "react";
 
-const NewsCard = () => {
+const NewsCard = ({ title, description, imgURL }) => {
+  console.log("called ");
   return (
     <div className="col">
-      <div className="card h-100">
-        <img src="..." className="card-img-top" alt="..." />
+      <div className="card h-100" style={{ borderRadius: "20px" }}>
+        <img
+          src={imgURL}
+          className="card-img-top"
+          alt="..."
+          style={{
+            objectFit: "cover",
+            maxHeight: "200px",
+            borderRadius: "20px",
+            border: "1px solid black",
+          }}
+        />
         <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            This is a longer card with supporting text below as a natural
-            lead-in to additional content. This content is a little bit longer.
-          </p>
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text">{description}</p>
         </div>
       </div>
     </div>
