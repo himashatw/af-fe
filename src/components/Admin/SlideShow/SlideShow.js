@@ -2,7 +2,7 @@ import React from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import "./TopSpeakerStyle.css";
+import "./SlideShow.css";
 import NewsCard from "../NewsCard/NewsCard";
 
 const responsive = {
@@ -37,7 +37,7 @@ const slideNextKeyBoard = (e) => {
 const SlideShow = ({ slideData, slideTitle }) => {
   return (
     <div className="past-speaker-container">
-      <h2>{slideTitle}</h2>
+      <h4>{slideTitle}</h4>
       <div className="nav-button-wrapper">
         <div className="view-more">View More</div>
         <div
@@ -70,8 +70,12 @@ const SlideShow = ({ slideData, slideTitle }) => {
             slider = slide;
           }}
         >
-          {slideData.data.map((speaker) => (
-            <NewsCard />
+          {slideData.map((speaker) => (
+            <NewsCard
+              title={speaker.title}
+              description={speaker.description}
+              imgURL={speaker.imgURL}
+            />
           ))}
         </OwlCarousel>
       </div>
