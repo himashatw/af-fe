@@ -15,7 +15,7 @@ const HomeButton = ({ children, type, onClick, buttonStyle, buttonSize }) => {
 
   return (
     <div>
-      <Link to="/sign-up" className="btn-mobile">
+      <Link to="/login" className="btn-mobile">
         <button
           className={`btn ${checkButtonStyle} ${checkButtonSize}`}
           onClick={onClick}
