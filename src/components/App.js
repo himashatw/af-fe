@@ -2,16 +2,17 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header/Header";
 import "./App.css";
-import CreateAttendee from "../components/Users/CreateAttendee";
 import CreateReseacher from "../components/Users/CreateResearcher";
 import EditorDashboard from "./EditorWorkspace/EditorDashboard";
 import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
 import ViewResearches from "./Reviewer/viewResearches";
 import CreateWsConductor from "../components/Users/CreateWsConductor";
-import UserRegistrationButton from "./Users/UserRegistrationButton/UserRegistrationButton";
 import AddSpeaker from "./EditorWorkspace/AddSpeaker";
 import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
+import AddNews from "./EditorWorkspace/AddNews";
+import ViewNews from "./EditorWorkspace/ViewNews";
+import UserRegistrationButton from "./Users/UserRegistrationButton/UserRegistrationButton";
 import AdminNavBar from "./Admin/AdminNavBar/AdminNavBar";
 import Home from "../components/Admin/Pages/Home";
 import News from "./Admin/Pages/News";
@@ -24,6 +25,12 @@ import ReviewerLogin from "./Reviewer/reviewerLogin";
 import ReviewerDashboard from "./Reviewer/reviewerDashboard";
 import DownloadDashboard from "./DownloadPage/DashboardForDownload";
 import ReviewNavBar from "./Reviewer/ReviewNavBar"
+import AttendeeLogin from "./Users/UserLogin/AttendeeLogin";
+import ResearcherLogin from "./Users/UserLogin/ResearcherLogin";
+import WsConLogin from "./Users/UserLogin/WsConLogin";
+import UserNavBar from "./Users/UserNavBar/UserNavBar";
+import Stats from "./Admin/Pages/Stats";
+import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
 
 const App = () => {
   return (
@@ -35,12 +42,15 @@ const App = () => {
             <HeroSection />
           </Route>
           <Route exact path="/user/attendee">
+            <UserNavBar />
             <CreateAttendee />
           </Route>
           <Route exact path="/user/researcher">
+            <UserNavBar />
             <CreateReseacher />
           </Route>
           <Route exact path="/user/wsconductor">
+            <UserNavBar />
             <CreateWsConductor />
           </Route>
           <Route exact path="/editor/dashboard">
@@ -87,6 +97,12 @@ const App = () => {
           <Route exact path="/editor/viewSpeaker">
             <ViewSpeaker />
           </Route>
+          <Route exact path="/editor/addNews">
+            <AddNews />
+          </Route>
+          <Route exact path="/editor/viewNews">
+            <ViewNews />
+          </Route>
           <Route exact path="/admin">
             <AdminNavBar />
             <Home />
@@ -98,6 +114,26 @@ const App = () => {
           <Route exact path="/admin/approvednews">
             <AdminNavBar />
             <ApprovedNews />
+          </Route>
+          <Route exact path="/user/attendee/login">
+            <UserNavBar />
+            <AttendeeLogin />
+          </Route>
+          <Route exact path="/user/researcher/login">
+            <UserNavBar />
+            <ResearcherLogin />
+          </Route>
+          <Route exact path="/user/wsconductor/login">
+            <UserNavBar />
+            <WsConLogin />
+          </Route>
+          <Route exact path="/admin/stats">
+            <AdminNavBar />
+            <Stats />
+          </Route>
+          <Route exact path="/attendee/dashboard">
+            <UserNavBar />
+            <AttendeeDashboard />
           </Route>
         </Switch>
       </div>

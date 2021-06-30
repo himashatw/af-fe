@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SlideShow from "../SlideShow/SlideShow";
-import speakers from "./Speaker.json";
 import axios from "../../../services/axios";
 
 function News() {
-  useState(() => {}, []);
+  const [news, setNews] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      await axios.get("/pendingnews").then((response) => {
+        setNews(response.data.result);
+      });
+    };
+    getData();
+  }, []);
   return (
     <div className="news">
       <div className="container mt-2" style={{ border: "1px solid black" }}>
@@ -14,13 +21,17 @@ function News() {
       </div>
       <div className="container mt-2" style={{ border: "1px solid black" }}>
         <>
-          <SlideShow slideData={speakers} slideTitle={"Pending News"} />
+          {news.length && (
+            <SlideShow
+              slideData={news}
+              slideTitle={"Pending News"}
+              type={"pending"}
+            />
+          )}
         </>
       </div>
       <div className="container mt-2" style={{ border: "1px solid black" }}>
-        <>
-          {/* <SlideShow slideData={speakers} slideTitle={"Approved News"} /> */}
-        </>
+        <></>
       </div>
     </div>
   );

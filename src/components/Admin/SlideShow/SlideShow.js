@@ -2,8 +2,9 @@ import React from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import "./TopSpeakerStyle.css";
+import "./SlideShow.css";
 import NewsCard from "../NewsCard/NewsCard";
+import PendingNewsCard from "../NewsCard/PendingNewsCard";
 
 const responsive = {
   0: {
@@ -34,10 +35,10 @@ const slideNextKeyBoard = (e) => {
   }
 };
 
-const SlideShow = ({ slideData, slideTitle }) => {
+const SlideShow = ({ slideData, slideTitle, type }) => {
   return (
-    <div className="past-speaker-container">
-      <h2>{slideTitle}</h2>
+    <div className="past-speaker-container" style={{ zIndex: "1000" }}>
+      <h4>{slideTitle}</h4>
       <div className="nav-button-wrapper">
         <div className="view-more">View More</div>
         <div
@@ -70,9 +71,25 @@ const SlideShow = ({ slideData, slideTitle }) => {
             slider = slide;
           }}
         >
-          {slideData.data.map((speaker) => (
-            <NewsCard />
-          ))}
+          {slideData.map((speaker) =>
+            type === "approved" ? (
+              <NewsCard
+                id={speaker._id}
+                title={speaker.title}
+                description={speaker.description}
+                imgURL={speaker.imgURL}
+                key={speaker._id}
+              />
+            ) : (
+              <PendingNewsCard
+                id={speaker._id}
+                title={speaker.title}
+                description={speaker.description}
+                imgURL={speaker.imgURL}
+                key={speaker._id}
+              />
+            )
+          )}
         </OwlCarousel>
       </div>
     </div>

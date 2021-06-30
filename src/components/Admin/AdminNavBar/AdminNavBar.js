@@ -27,7 +27,7 @@ const AdminNavBar = () => {
                   marginLeft: "80%",
                 }}
               >
-                Admin
+                Admin <i className="fas fa-power-off"></i>
               </h1>
             </center>
           </div>

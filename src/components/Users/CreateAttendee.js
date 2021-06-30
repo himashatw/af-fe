@@ -26,7 +26,7 @@ const createAttendee = (props) => {
             .then(res => {
                 console.log(res.data);
                 alert('Registered Successfully');
-                //props.history.push('/login');
+                history.push('/user/attendee/login');
             }).catch(error => {
                 console.log(error.response.data.error);
             })
@@ -82,6 +82,9 @@ const createAttendee = (props) => {
                                 required
                                 value={attendee.password}
                                 onChange={onChange}
+                                placeholder="minimum 4 characters"
+                                minLength="4"
+                                pattern="[0-9a-fA-F]{4,8}"
                                 placeholder="minimum 8 characters"
                                 pattern="(?=.*\[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                 title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"

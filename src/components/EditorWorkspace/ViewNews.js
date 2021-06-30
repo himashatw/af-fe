@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ViewSpeaker = () =>{
+const ViewNews = () =>{
     return(
 <div className="card-header">
-<h4>View Keynote Speakers</h4>
+<h4>View Conference News</h4>
 <div className="container" className="position-absolute top-50 start-50 translate-middle" >
 <div  className="shadow p-3 mb-5 bg-body rounded" >
 <table class="table caption-top">
@@ -13,7 +13,7 @@ const ViewSpeaker = () =>{
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Description</th>
-      <th scope="col">Speaker's Photo</th>
+      <th scope="col">Flyer Image</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -24,10 +24,10 @@ const ViewSpeaker = () =>{
       <td>Otto</td>
       <td>@mdo</td>
       <td>
-      <Link to="/editor/editSpeaker" className="btn btn-outline-success">
+      <Link to="/editor/editNews" className="btn btn-outline-success">
               Edit 
       </Link>
-      <Link to="/editor/deleteSpeaker" className="btn btn-outline-danger">
+      <Link to="/editor/deleteNews" className="btn btn-outline-danger">
               Delete
       </Link>
       </td>
@@ -38,10 +38,10 @@ const ViewSpeaker = () =>{
       <td>Thornton</td>
       <td>@fat</td>
       <td>
-      <Link to="/editor/editSpeaker" className="btn btn-outline-success">
+      <Link to="/editor/editNews" className="btn btn-outline-success">
               Edit 
       </Link>
-      <Link to="/editor/deleteSpeaker" className="btn btn-outline-danger">
+      <Link to="/editor/deleteNews" className="btn btn-outline-danger">
               Delete
       </Link>
       </td>
@@ -52,10 +52,10 @@ const ViewSpeaker = () =>{
       <td>the Bird</td>
       <td>@twitter</td>
       <td>
-      <Link to="/editor/editSpeaker" className="btn btn-outline-success">
+      <Link to="/editor/editNewsr" className="btn btn-outline-success">
               Edit 
       </Link>
-      <Link to="/editor/deleteSpeaker" className="btn btn-outline-danger">
+      <Link to="/editor/deleteNews" className="btn btn-outline-danger">
               Delete
       </Link>
       </td>
@@ -71,4 +71,4 @@ const ViewSpeaker = () =>{
 };
 
 
-export default ViewSpeaker;
+export default ViewNews;
