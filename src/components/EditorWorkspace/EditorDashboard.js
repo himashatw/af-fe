@@ -27,7 +27,7 @@ const EditorDashboard = () => {
       <div className="card-body"  className="shadow p-3 mb-5 bg-body rounded">
         <h5 className="card-title">Conference News</h5>
         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <Link to="/editor/addNews" className="btn btn-primary">
+        <Link to="/editor/addNews2" className="btn btn-primary">
               Add News
         </Link>
         <Link to="/editor/viewNews" className="btn btn-success">
