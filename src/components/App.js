@@ -35,6 +35,13 @@ import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
 import EditNews from "./EditorWorkspace/EditNews";
 import EditSpeaker from "./EditorWorkspace/EditSpeaker";
 import EditorNavBar from "./EditorWorkspace/EditorNavBar";
+import ResearcherDashboard from "./Users/UserDashboard/ResearcherDashboard";
+import WsConductorDashBoard from "./Users/UserDashboard/WsConductorDashBoard";
+import LUserNavbar from "./Users/UserNavBar/lUserNavbar";
+import UserLoginButton from "./Users/UserRegistrationButton/UserLoginButton";
+import Speaker from "./Admin/Pages/Speakers";
+import Users from "./Admin/Pages/Users";
+import ReviwernotLogedNavBar from "./Reviewer/ReviwernotLogedNavBar"
 
 
 const App = () => {
@@ -79,11 +86,11 @@ const App = () => {
             <DownloadDashboard />
           </Route>
           <Route exact path="/reviewer/register">
-            <ReviewNavBar />
+            <ReviwernotLogedNavBar />
             <ReviewerRegister />
           </Route>
           <Route path="/reviewer/login" >
-            <ReviewNavBar />
+            <ReviwernotLogedNavBar />
             <ReviewerLogin />
           </Route>
           <Route path="/reviewer/dashboard/:email">
@@ -148,9 +155,27 @@ const App = () => {
             <UserNavBar />
             <AttendeeDashboard />
           </Route>
-
-          <Route exact path="/editor/editNews/:id" component={EditNews} > </Route>
-          <Route exact path="/editor/editSpeaker/:id" component={EditSpeaker} ></Route>
+          <Route exact path="/editor/editNews/:id" component={EditNews} />
+          <Route exact path="/editor/editSpeaker/:id" component={EditSpeaker} />
+          <Route exact path="/researcher/dashboard">
+            <LUserNavbar />
+            <ResearcherDashboard />
+          </Route>
+          <Route exact path="/workshopcon/dashboard">
+            <LUserNavbar />
+            <WsConductorDashBoard />
+          </Route>
+          <Route exact path="/login">
+            <UserLoginButton />
+          </Route>
+          <Route exact path="/admin/speakers">
+            <AdminNavBar />
+            <Speaker />
+          </Route>
+          <Route exact path="/admin/users">
+            <AdminNavBar />
+            <Users />
+          </Route>
         </Switch>
       </div>
     </Router>
