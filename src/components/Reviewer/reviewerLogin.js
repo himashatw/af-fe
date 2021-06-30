@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from '../../services/axios'
+import './Workshop.css'
 
 class reviewerLogin extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class reviewerLogin extends Component {
             console.log(res.data);
             alert('Login successfully');
             const email = this.state.email
-            window.location = `/reviewer/dashboard/${email}`;
+            window.location = `/reviewer/dashboard/1234`;
         }).catch(error =>{
             console.log('error',error.message);
             alert('Email or Password incorrect')
@@ -37,7 +38,9 @@ class reviewerLogin extends Component {
 
     render() {
         return (
+            <div className="research-login-content">
             <div className="container">
+               
                 <br />
                 <div className="card" style={{ width: "50%", marginLeft: "25%" }}>
                     <div className="card-header">
@@ -75,9 +78,11 @@ class reviewerLogin extends Component {
                             <br/>
                             <button type="submit" className="btn btn-primary">Submit</button>
                             <button className="btn btn-danger" style={{ marginLeft: "2%" }}>Cancel</button>
+                            <a className="btn btn-secondary" href="/reviewer/register" style={{ marginLeft: "2%" }}>Still not registered?.Register Now</a>
                         </form>
                     </div>
                 </div>
+            </div>
             </div>
         );
     }

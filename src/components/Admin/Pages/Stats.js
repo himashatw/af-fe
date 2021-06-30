@@ -8,12 +8,12 @@ const Stats = () => {
       setStatObj(respone.data.countObj);
     });
   }, []);
-  console.log(statObj);
+
   return (
     <div className="stats">
       <div className="container mt-2" style={{ border: "1px solid black" }}>
         <center>
-          <h1 style={{ fontSize: "1.5rem" }}>Stats</h1>
+          <h1 style={{ fontSize: "1.5rem", color: "black" }}>Stats</h1>
         </center>
       </div>
       <div className="container mt-5" style={{ border: "1px solid black" }}>
@@ -25,7 +25,7 @@ const Stats = () => {
                   className="container"
                   style={{ display: "inline-block", textAlign: "center" }}
                 >
-                  <h5 className="card-title">Attendees</h5>
+                  <h1 className="card-text">Attendees</h1>
                   <i className="fas fa-users fa-2x"></i>
                 </div>
                 <center>
@@ -41,7 +41,7 @@ const Stats = () => {
                   className="container"
                   style={{ display: "inline-block", textAlign: "center" }}
                 >
-                  <h5 className="card-title">Researchers</h5>
+                  <h1 className="card-text">Researchers</h1>
                   <i className="fas fa-user-friends fa-2x"></i>
                 </div>
                 <center>
@@ -57,7 +57,7 @@ const Stats = () => {
                   className="container"
                   style={{ display: "inline-block", textAlign: "center" }}
                 >
-                  <h5 className="card-title">Workshops</h5>
+                  <h1 className="card-text">Workshops</h1>
                   <i className="fas fa-laptop-house fa-2x"></i>
                 </div>
                 <center>
@@ -73,7 +73,7 @@ const Stats = () => {
                   className="container"
                   style={{ display: "inline-block", textAlign: "center" }}
                 >
-                  <h5 className="card-title">Research Papers</h5>
+                  <h1 className="card-text">Research Papers</h1>
                   <i className="fas fa-paperclip fa-2x"></i>
                 </div>
                 <center>

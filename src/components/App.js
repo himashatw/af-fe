@@ -32,11 +32,16 @@ import WsConLogin from "./Users/UserLogin/WsConLogin";
 import UserNavBar from "./Users/UserNavBar/UserNavBar";
 import Stats from "./Admin/Pages/Stats";
 import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
+import EditNews from "./EditorWorkspace/EditNews";
+import EditSpeaker from "./EditorWorkspace/EditSpeaker";
+import EditorNavBar from "./EditorWorkspace/EditorNavBar";
 import ResearcherDashboard from "./Users/UserDashboard/ResearcherDashboard";
 import WsConductorDashBoard from "./Users/UserDashboard/WsConductorDashBoard";
 import LUserNavbar from "./Users/UserNavBar/lUserNavbar";
 import UserLoginButton from "./Users/UserRegistrationButton/UserLoginButton";
 import Speaker from "./Admin/Pages/Speakers";
+import Users from "./Admin/Pages/Users";
+import ReviwernotLogedNavBar from "./Reviewer/ReviwernotLogedNavBar";
 
 const App = () => {
   return (
@@ -60,6 +65,7 @@ const App = () => {
             <CreateWsConductor />
           </Route>
           <Route exact path="/editor/dashboard">
+            <EditorNavBar />
             <EditorDashboard />
           </Route>
           <Route exact path="/reviewer/viewWorkshops">
@@ -79,11 +85,11 @@ const App = () => {
             <DownloadDashboard />
           </Route>
           <Route exact path="/reviewer/register">
-            <ReviewNavBar />
+            <ReviwernotLogedNavBar />
             <ReviewerRegister />
           </Route>
           <Route path="/reviewer/login">
-            <ReviewNavBar />
+            <ReviwernotLogedNavBar />
             <ReviewerLogin />
           </Route>
           <Route path="/reviewer/dashboard/:email">
@@ -98,18 +104,22 @@ const App = () => {
             <UserRegistrationButton />
           </Route>
           <Route exact path="/editor/addSpeaker">
+            <EditorNavBar />
             <AddSpeaker />
           </Route>
           <Route exact path="/editor/viewSpeaker">
+            <EditorNavBar />
             <ViewSpeaker />
           </Route>
           <Route exact path="/editor/addNews">
             <AddNews />
           </Route>
           <Route exact path="/editor/addNews2">
+            <EditorNavBar />
             <AddNews2 />
           </Route>
           <Route exact path="/editor/viewNews">
+            <EditorNavBar />
             <ViewNews />
           </Route>
           <Route exact path="/admin">
@@ -133,7 +143,7 @@ const App = () => {
             <ResearcherLogin />
           </Route>
           <Route exact path="/user/wsconductor/login">
-            <UserNavBar />
+            <UserNavbar />
             <WsConLogin />
           </Route>
           <Route exact path="/admin/stats">
@@ -141,10 +151,12 @@ const App = () => {
             <Stats />
           </Route>
           <Route exact path="/attendee/dashboard">
-            <LUserNavbar />
+            <LUserNavBar />
             <AttendeeDashboard />
           </Route>
-          <Route exact path="/researcher/dashboard/:id">
+          <Route exact path="/editor/editNews/:id" component={EditNews} />
+          <Route exact path="/editor/editSpeaker/:id" component={EditSpeaker} />
+          <Route exact path="/researcher/dashboard">
             <LUserNavbar />
             <ResearcherDashboard />
           </Route>
@@ -158,6 +170,10 @@ const App = () => {
           <Route exact path="/admin/speakers">
             <AdminNavBar />
             <Speaker />
+          </Route>
+          <Route exact path="/admin/users">
+            <AdminNavBar />
+            <Users />
           </Route>
         </Switch>
       </div>

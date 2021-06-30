@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from '../../services/axios'
 import { pdfDownload } from './pdfDownload'
-import { pdfDownload } from './pdfDownload'
 import "./Reviewer.css"
 
 class viewWorkshops extends Component {
@@ -58,7 +57,7 @@ class viewWorkshops extends Component {
         return (
             <div className="research-content">
                 <div className="container">
-                    <center><h3>View Workshops</h3></center>
+                    <center><h3>Workshop Uploads</h3></center>
                     <br />
                     <h6 style={{ color: 'red' }}>
                         Notice to reviewers: Approve workshops that have only relevant for the conference.
@@ -67,14 +66,15 @@ class viewWorkshops extends Component {
                         <div key={index} className="card mb-3">
                             <div className="card-content-research">
                                 <div className="p-3">
-                                    <h5>FullName :{value.fullName}</h5>
-                                    <h5>PhoneNo  :{value.phoneNo}</h5>
-                                    <h5>Email    :{value.email}</h5>
-                                    <h5>Title of workshop:{value.workshopTitle}</h5>
-                                    <h5>Workshop Data :{value.workshopData}</h5>
-                                    <h5>Time of Workshop:{value.workshopTime}</h5>
-                                    <button className="btn btn-success" onClick={event => this.navigateDownload(event, value.uploads)}>WorkShop Details</button>
-                                    <button className="btn btn-warning" style={{ marginLeft: "2%" }} onClick={event => this.navigateApprove(event, value._id)}>Approve WorkShop</button>
+                                <h4><p>Workshop No : 0{index + 1}</p></h4>
+                                    <h5 style={{ color: 'white' }}>FullName :{value.fullName}</h5>
+                                    <h5 style={{ color: 'white' }}>PhoneNo  :{value.phoneNo}</h5>
+                                    <h5 style={{ color: 'white' }}>Email    :{value.email}</h5>
+                                    <h5 style={{ color: 'white' }}>Title of workshop:{value.workshopTitle}</h5>
+                                    <h5 style={{ color: 'white' }}>Workshop Data :{value.workshopData}</h5>
+                                    <h5 style={{ color: 'white' }}>Time of Workshop:{value.workshopTime}</h5>
+                                    <button className="btn btn-light" onClick={event => this.navigateDownload(event, value.uploads)}>WorkShop Details</button>
+                                    <button className="btn btn-primary" style={{ marginLeft: "2%" }} onClick={event => this.navigateApprove(event, value._id)}>Approve WorkShop</button>
                                     <button className="btn btn-danger" style={{ marginLeft: "2%" }} onClick={event => this.navigateDelete(event, value._id)}>Decline WorkShop</button>
                                 </div>
                             </div>
