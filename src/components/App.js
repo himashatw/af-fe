@@ -18,13 +18,13 @@ import Home from "../components/Admin/Pages/Home";
 import News from "./Admin/Pages/News";
 import ApprovedNews from "./Admin/Pages/ApprovedNews";
 import ViewWorkshops from "./Reviewer/viewWorkshops";
-import DownloadResearchs from "./DownloadPage/downloadResearchs"
-import DownloadWorkshops from "./DownloadPage/downloadWorkshops"
+import DownloadResearchs from "./DownloadPage/downloadResearchs";
+import DownloadWorkshops from "./DownloadPage/downloadWorkshops";
 import ReviewerRegister from "./Reviewer/reviewerRegister";
 import ReviewerLogin from "./Reviewer/reviewerLogin";
 import ReviewerDashboard from "./Reviewer/reviewerDashboard";
 import DownloadDashboard from "./DownloadPage/DashboardForDownload";
-import ReviewNavBar from "./Reviewer/ReviewNavBar"
+import ReviewNavBar from "./Reviewer/ReviewNavBar";
 import AttendeeLogin from "./Users/UserLogin/AttendeeLogin";
 import AddNews2 from "./EditorWorkspace/AddNews2";
 import ResearcherLogin from "./Users/UserLogin/ResearcherLogin";
@@ -32,7 +32,7 @@ import WsConLogin from "./Users/UserLogin/WsConLogin";
 import UserNavBar from "./Users/UserNavBar/UserNavBar";
 import Stats from "./Admin/Pages/Stats";
 import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
-
+import Speaker from "./Admin/Pages/Speakers";
 
 const App = () => {
   return (
@@ -78,7 +78,7 @@ const App = () => {
             <ReviewNavBar />
             <ReviewerRegister />
           </Route>
-          <Route path="/reviewer/login" >
+          <Route path="/reviewer/login">
             <ReviewNavBar />
             <ReviewerLogin />
           </Route>
@@ -139,6 +139,10 @@ const App = () => {
           <Route exact path="/attendee/dashboard">
             <UserNavBar />
             <AttendeeDashboard />
+          </Route>
+          <Route exact path="/admin/speakers">
+            <AdminNavBar />
+            <Speaker />
           </Route>
         </Switch>
       </div>
