@@ -4,7 +4,7 @@ import { ProgressBar } from "react-bootstrap";
 import { useHistory, Link } from "react-router-dom";
 
 const CreateReseacher = (props) => {
-  //const history = useHistory();
+  const history = useHistory();
   const [fullName, setfullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

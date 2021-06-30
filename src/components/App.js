@@ -144,7 +144,7 @@ const App = () => {
             <LUserNavbar />
             <AttendeeDashboard />
           </Route>
-          <Route exact path="/researcher/dashboard">
+          <Route exact path="/researcher/dashboard/:id">
             <LUserNavbar />
             <ResearcherDashboard />
           </Route>

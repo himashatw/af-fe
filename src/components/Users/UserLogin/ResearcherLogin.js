@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from '../../../services/axios';
 
-const ResearcherLogin = () => {
+const ResearcherLogin = (props) => {
 
     const history = useHistory();
     const [email, setEmail] = useState("");
@@ -19,13 +19,13 @@ const ResearcherLogin = () => {
         axios.post("/reseacher/login", logingUser)
             .then(res => {
                 console.log(res.data.message)
+                console.log(res.data.researcher._id)
                 console.log(res.status)
                 if (res.status == 200) {
                     alert(res.data.message)
-                    history.push('/researcher/dashboard')
-                } else {
-                    history.push('/')
-                }
+                    //props.history.push('/researcher/dashboard/')
+                    history.push(`/researcher/dashboard/${res.data.researcher._id}`)
+                } 
             }).catch(error => {
                 alert(error.response.data.message);
             })
