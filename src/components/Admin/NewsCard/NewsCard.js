@@ -23,7 +23,6 @@ const NewsCard = ({ title, description, imgURL, id }) => {
           <p className="card-text" style={{ color: "black" }}>
             {description}
           </p>
-          <button onClick={btnHandler}>remove</button>
         </div>
       </div>
     </div>
