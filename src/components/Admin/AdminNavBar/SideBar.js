@@ -29,8 +29,8 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Messages",
-    path: "/messages",
+    title: "Keynote Speakers",
+    path: "/admin/speakers",
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: "nav-text",
   },

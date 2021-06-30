@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "../../../services/axios";
 
 const PendingNewsCard = ({ title, description, imgURL, id }) => {
-  const btnHandler = () => {
-    alert(id);
+  const [approvedBtn, setApprovedBtn] = useState(false);
+  const btnHandler = async () => {
+    await axios
+      .post("/addnewsapproved", {
+        title: title,
+        description: description,
+        imgURL: imgURL,
+      })
+      .then(async () => {
+        await axios
+          .delete("/deletepending", {
+            params: {
+              id: id,
+            },
+          })
+          .then(() => {
+            setApprovedBtn(true);
+          });
+      });
   };
   return (
     <div className="col">
@@ -24,9 +42,17 @@ const PendingNewsCard = ({ title, description, imgURL, id }) => {
             {description}
           </p>
           <center>
-            <button type="button" class="btn btn-success" onClick={btnHandler}>
-              Approve
-            </button>
+            {!approvedBtn ? (
+              <button
+                type="button"
+                className="btn btn-success"
+                onClick={btnHandler}
+              >
+                Approve
+              </button>
+            ) : (
+              <button>Approved</button>
+            )}
           </center>
         </div>
       </div>
