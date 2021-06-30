@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SideBar";
 import { IconContext } from "react-icons";
 import "./AdminNavBar.css";
+import { Link } from "react-router-dom";
 
 const AdminNavBar = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -27,7 +28,10 @@ const AdminNavBar = () => {
                   marginLeft: "80%",
                 }}
               >
-                Admin <i className="fas fa-power-off"></i>
+                Admin{" "}
+                <Link to="/">
+                  <i className="fas fa-power-off"></i>
+                </Link>
               </h1>
             </center>
           </div>
