@@ -4,15 +4,16 @@ import { ProgressBar } from "react-bootstrap";
 import { useHistory, Link } from "react-router-dom";
 
 const CreateWsConductor = (props) => {
-  //const history = useHistory();
-  const [fullName, setfullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [phoneNo, setPhoneNo] = useState("");
-  const [workshopTitle, setworkshopTitle] = useState("");
-  const [workshopData, setworkshopData] = useState("");
-  const [workshopTime, setworkshopTime] = useState("");
-  const [uploads, setUploads] = useState("");
+    //const history = useHistory();
+    const [fullName, setfullName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [phoneNo, setPhoneNo] = useState("");
+    const [workshopTitle, setworkshopTitle] = useState("");
+    const [workshopData, setworkshopData] = useState("");
+    const [workshopTime, setworkshopTime] = useState("");
+    const [approve,setApprove]= useState(false);
+    const [uploads, setUploads] = useState("");
 
   // const [progressPercent, setProgressPercent] = useState(0);
   const [progressPercent, setProgressPercent] = useState();
@@ -30,22 +31,24 @@ const CreateWsConductor = (props) => {
 
     const formData = new FormData();
 
-    formData.append("fullName", fullName);
-    formData.append("email", email);
-    formData.append("password", password);
-    formData.append("phoneNo", phoneNo);
-    formData.append("workshopTitle", workshopTitle);
-    formData.append("workshopData", workshopData);
-    formData.append("workshopTime", workshopTime);
-    formData.append("uploads", uploads);
+        formData.append("fullName", fullName);
+        formData.append("email", email);
+        formData.append("password", password);
+        formData.append("phoneNo", phoneNo);
+        formData.append("workshopTitle", workshopTitle);
+        formData.append("workshopData", workshopData);
+        formData.append("workshopTime", workshopTime);
+        formData.append("approve", approve);
+        formData.append("uploads", uploads);
 
-    setfullName("");
-    setEmail("");
-    setPassword("");
-    setPhoneNo("");
-    setworkshopTitle("");
-    setworkshopData("");
-    setworkshopTime("");
+        setfullName("");
+        setEmail("");
+        setPassword("");
+        setPhoneNo("");
+        setworkshopTitle("")
+        setworkshopData("")
+        setworkshopTime("")
+        setApprove(false)
 
     axios
       .post("/workshopcon/add", formData, {
@@ -60,7 +63,7 @@ const CreateWsConductor = (props) => {
       .then((res) => {
         resdata = res.data.message;
         alert(resdata);
-        //props.history.push('/')
+        history.push('/user/wsconductor/login')
       })
       .catch((err) => {
         console.log(err.response.data.errors);
@@ -141,30 +144,9 @@ const CreateWsConductor = (props) => {
                 onChange={(e) => setPhoneNo(e.target.value)}
                 name="phoneNo"
                 placeholder="071 555 5554"
-                pattern="[0-9]{3}[0-9]{3}-[0-9]{4}"
+                pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                 maxLength="10"
               />
-            </div>
-            <div className="mb-3">
-              {error.found && (
-                <span className="alert-danger" role="alert">
-                  {error.message}
-                </span>
-              )}
-              <br />
-              <label htmlFor="upload" className="form-label">
-                Upload your file
-              </label>
-              <br />
-              <input
-                type="file"
-                uploads="uploads"
-                required
-                className="form-control-file"
-                onChange={upload}
-              />
-              pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="Must contain at least 10
-              numbers" maxLength="10" />
             </div>
             {/* //card */}
             <div className="card">
@@ -222,6 +204,7 @@ const CreateWsConductor = (props) => {
                     </span>
                   )}
                   <br />
+                  <small style={{color:"red"}}>Upload Only Pdf Format</small><br/>
                   <label htmlFor="upload" className="form-label">
                     Upload your file
                   </label>

@@ -19,12 +19,12 @@ export const SidebarData = [
   {
     title: "Approved News",
     path: "/admin/approvednews",
-    icon: <FaIcons.FaCartPlus />,
+    icon: <IoIcons.IoIosPaper />,
     cName: "nav-text",
   },
   {
-    title: "Team",
-    path: "/team",
+    title: "Stats",
+    path: "/admin/stats",
     icon: <IoIcons.IoMdPeople />,
     cName: "nav-text",
   },

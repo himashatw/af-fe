@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import axios from "../../services/axios";
-import { pdfDownload } from "./pdfDownload";
-import "./Reviewer.css";
+import React, { Component } from 'react';
+import axios from '../../services/axios'
+import { pdfDownload } from './pdfDownload'
+import "./Reviewer.css"
 
 class viewResearches extends Component {
   constructor(props) {
@@ -30,17 +30,15 @@ class viewResearches extends Component {
   }
 
   navigateApprove(event, id) {
-    axios
-      .put(`reviewer/approveResearch/${id}`)
-      .then((res) => {
-        alert("Approve Research?");
-        console.log(res.data);
+    alert("Approve Research?")
+    axios.put(`reviewer/approveResearch/${id}`)
+      .then(res => {
+        console.log(res.data)
         window.location.reload();
-      })
-      .catch((err) => {
+      }).catch(err => {
         console.log(err);
-      });
-    // axios.get(/reviewer/getResearch/${id}).then(res => {
+      })
+    // axios.get(`/reviewer/getResearch/${id}`).then(res => {
 
     //     console.log(res.data);
     //     console.log(res.data.data.uploads)
@@ -70,63 +68,47 @@ class viewResearches extends Component {
   }
 
   navigateDelete(event, id) {
-    axios
-      .delete(`/reviewer/deleteResearch/${id}`)
-      .then((res) => {
-        alert("Decline Research?");
-        console.log(res.data);
-        window.location.reload();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    alert("Decline Research?")
+    axios.delete(`/reviewer/deleteResearch/${id}`).then(res => {
+      console.log(res.data)
+      window.location.reload();
+    }).catch(err => {
+      console.log(err);
+    })
   }
   render() {
     if (this.state.researches.length == 0) {
       return (
         <div className="research-content">
-          <div class="research-alert">
-            <h3> There is no research paper available!</h3>
+          <div className="research-alert">
+            <h2> There is no research paper uploads available!</h2>
           </div>
-        </div>
-      );
+        </div>);
     }
+
     return (
       <div className="research-content">
         <div className="container">
-          <center>
-            <h5>View Research</h5>
-          </center>
-          {this.state.researches.length > 0 &&
-            this.state.researches.map((value, index) => (
-              <div key={index} className="card mb-3">
+          <center><h3>Research Paper Uploads</h3></center>
+          <br />
+          <h6 style={{ color: 'red' }}>
+            Notice to reviewers: Approve research Papers that have only relevant content for the conference.
+          </h6>
+          {this.state.researches.length > 0 && this.state.researches.map((value, index) => (
+            <div key={index} className="card mb-3">
+              <div className="card-content-research">
                 <div className="p-3">
+                  <h4><p>🧐Research No : 0{index + 1}</p></h4>
                   <h5>FullName :{value.fullName}</h5>
-                  <h5>PhoneNo :{value.phoneNo}</h5>
-                  <h5>Email :{value.email}</h5>
-                  <button
-                    className="btn btn-success"
-                    onClick={(event) =>
-                      this.navigateDownload(event, value.uploads)
-                    }
-                  >
-                    Research paper
-                  </button>
-                  <button
-                    className="btn btn-warning"
-                    onClick={(event) => this.navigateApprove(event, value._id)}
-                  >
-                    Approve Research
-                  </button>
-                  <button
-                    className="btn btn-danger"
-                    onClick={(event) => this.navigateDelete(event, value._id)}
-                  >
-                    Decline Research
-                  </button>
+                  <h5>PhoneNo  :{value.phoneNo}</h5>
+                  <h5>Email    :{value.email}</h5>
+                  <button className="btn btn-warning" onClick={event => this.navigateDownload(event, value.uploads)}>Research paper</button>
+                  <button className="btn btn-success" style={{ marginLeft: "2%" }} onClick={event => this.navigateApprove(event, value._id)}>Approve Research</button>
+                  <button className="btn btn-danger" style={{ marginLeft: "2%" }} onClick={event => this.navigateDelete(event, value._id)}>Decline Research</button>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
     );

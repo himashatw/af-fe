@@ -7,8 +7,13 @@
   margin-bottom: 15px;
   text-align: center;
 }
-.research-content{
-  /* background: url('../../../public/images/img-research-new.jpg') center center/cover no-repeat; */
-   height: 100vh;
-  width: 100%;
+h3 {
+    text-decoration: underline;
+    color: black;
+  }
+h5{
+  color: white;
+}
+.card-content-research{
+  background: #949494;
 }
