@@ -10,7 +10,7 @@
   object-fit: contain;
 }
 
-.hero-btns {
+/* .hero-btns {
   margin-top: 32px;
 }
 
@@ -20,12 +20,9 @@
 
 .fa-play-circle {
   margin-left: 4px;
-}
-p{
-  color: aliceblue;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-h2{
+} */
+
+.ushan-para{
   color: aliceblue;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-variant: initial;
