@@ -32,6 +32,7 @@ import WsConLogin from "./Users/UserLogin/WsConLogin";
 import UserNavBar from "./Users/UserNavBar/UserNavBar";
 import Stats from "./Admin/Pages/Stats";
 import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
+import ReviwernotLogedNavBar from "./Reviewer/ReviwernotLogedNavBar"
 
 
 const App = () => {
@@ -75,11 +76,11 @@ const App = () => {
             <DownloadDashboard />
           </Route>
           <Route exact path="/reviewer/register">
-            <ReviewNavBar />
+            <ReviwernotLogedNavBar />
             <ReviewerRegister />
           </Route>
           <Route path="/reviewer/login" >
-            <ReviewNavBar />
+            <ReviwernotLogedNavBar />
             <ReviewerLogin />
           </Route>
           <Route path="/reviewer/dashboard/:email">
