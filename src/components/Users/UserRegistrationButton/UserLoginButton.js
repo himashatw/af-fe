@@ -33,7 +33,7 @@ const UserLoginButton = () => {
               </td>
               <td>
                 <div>
-                  <Link to="/">
+                  <Link to="/editor/login">
                     <button className="addbtn addbtn_Effect">
                       Editor Login
                     </button>
