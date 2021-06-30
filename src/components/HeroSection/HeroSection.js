@@ -10,11 +10,11 @@ const HeroSection = () => {
       <div className="hero-btns">
         <Link to="/sign-up">
           <button
-            className="btns"
-            buttonStyle="btn--outline"
-            buttonSize="btn--large"
+            type="button"
+            className="btn btn-outline-light btn-lg"
+            style={{ border: "1px solid white" }}
           >
-            Register Now!
+            <h1>Register Now!</h1>
           </button>
         </Link>
       </div>

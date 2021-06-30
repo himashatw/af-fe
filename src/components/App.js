@@ -42,6 +42,7 @@ import UserLoginButton from "./Users/UserRegistrationButton/UserLoginButton";
 import Speaker from "./Admin/Pages/Speakers";
 import Users from "./Admin/Pages/Users";
 import ReviwernotLogedNavBar from "./Reviewer/ReviwernotLogedNavBar";
+import AdminLogin from "./Admin/Login/AdminLogin";
 
 const App = () => {
   return (
@@ -165,6 +166,7 @@ const App = () => {
             <WsConductorDashBoard />
           </Route>
           <Route exact path="/login">
+            <Header />
             <UserLoginButton />
           </Route>
           <Route exact path="/admin/speakers">
@@ -174,6 +176,10 @@ const App = () => {
           <Route exact path="/admin/users">
             <AdminNavBar />
             <Users />
+          </Route>
+          <Route exact path="/admin/login">
+            <Header />
+            <AdminLogin />
           </Route>
         </Switch>
       </div>
