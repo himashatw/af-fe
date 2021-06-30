@@ -2,64 +2,40 @@ import React from 'react'
 import { FaBeer } from 'react-icons/fa';
 import { FcSearch } from "react-icons/bi";
 import { FcSearch } from "react-icons/fc";
-class Question extends React.Component {
+class ReviewNavBar extends React.Component {
     constructor(props) {
-        
+
         super(props);
         this.state = {
-            email :null
+            email: null
         }
     }
 
     render() {
-        if (this.state.email == null) {
-            return (
-                <div>
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <div className="container-fluid">
-                        <a className="navbar-brand" href="/">CMS Reviewer</a>
-                        <button className="navbar-toggler" type="button">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" >
-                            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/sign-up">Review Research</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">Review Workshops</a>
-                                </li>
-                            </ul>
-                        </div>
+        return (
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a className="navbar-brand" href="/">ICAF Reviewer</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/reviewer/viewResearches">Review Research</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/reviewer/viewWorkshops">Review Workshops</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <a className="btn btn-outline-success my-2 my-sm-0" href="/">Log out</a>
+                        </form>
                     </div>
                 </nav>
             </div>
-            );
-
-        } else {
-            return (
-                <div>
-                    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                        <div className="container-fluid">
-                            <a className="navbar-brand" href="/">CMS Reviewer</a>
-                            <button className="navbar-toggler" type="button">
-                                <span className="navbar-toggler-icon"></span>
-                            </button>
-                            <div className="collapse navbar-collapse" >
-                                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="/sign-up">Review Research</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#">Review Workshops</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-                );
-        }
+        );
     }
 }
-export default Question;
+    export default ReviewNavBar;

@@ -98,12 +98,12 @@ class viewResearches extends Component {
             <div key={index} className="card mb-3">
               <div className="card-content-research">
                 <div className="p-3">
-                  <h4><p>🧐Research No : 0{index + 1}</p></h4>
-                  <h5>FullName :{value.fullName}</h5>
-                  <h5>PhoneNo  :{value.phoneNo}</h5>
-                  <h5>Email    :{value.email}</h5>
-                  <button className="btn btn-warning" onClick={event => this.navigateDownload(event, value.uploads)}>Research paper</button>
-                  <button className="btn btn-success" style={{ marginLeft: "2%" }} onClick={event => this.navigateApprove(event, value._id)}>Approve Research</button>
+                  <h4><p>Research No : 0{index + 1}</p></h4>
+                  <h5 style={{ color: 'white' }}>FullName :{value.fullName}</h5>
+                  <h5 style={{ color: 'white' }}>PhoneNo  :{value.phoneNo}</h5>
+                  <h5 style={{ color: 'white' }}>Email    :{value.email}</h5>
+                  <button className="btn btn-light" onClick={event => this.navigateDownload(event, value.uploads)}>Research paper</button>
+                  <button className="btn btn-primary" style={{ marginLeft: "2%" }} onClick={event => this.navigateApprove(event, value._id)}>Approve Research</button>
                   <button className="btn btn-danger" style={{ marginLeft: "2%" }} onClick={event => this.navigateDelete(event, value._id)}>Decline Research</button>
                 </div>
               </div>

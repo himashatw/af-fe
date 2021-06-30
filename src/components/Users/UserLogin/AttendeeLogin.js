@@ -19,6 +19,7 @@ const AttendeeLogin = () => {
         axios.post("/attendee/login", logingUser)
             .then(res => {
                 console.log(res.data.message)
+                console.log(res.data.email)
                 console.log(res.status)
                 if (res.status == 200) {
                     alert(res.data.message)
