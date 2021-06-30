@@ -12,6 +12,7 @@ const CreateWsConductor = (props) => {
     const [workshopTitle, setworkshopTitle] = useState("");
     const [workshopData, setworkshopData] = useState("");
     const [workshopTime, setworkshopTime] = useState("");
+    const [approve,setApprove]= useState(false);
     const [uploads, setUploads] = useState("");
 
     const [progressPercent, setProgressPercent] = useState();
@@ -36,6 +37,7 @@ const CreateWsConductor = (props) => {
         formData.append("workshopTitle", workshopTitle);
         formData.append("workshopData", workshopData);
         formData.append("workshopTime", workshopTime);
+        formData.append("approve", approve);
         formData.append("uploads", uploads);
 
         setfullName("");
@@ -45,6 +47,7 @@ const CreateWsConductor = (props) => {
         setworkshopTitle("")
         setworkshopData("")
         setworkshopTime("")
+        setApprove(false)
 
         axios.post("/workshopcon/add", formData, {
             headers: {

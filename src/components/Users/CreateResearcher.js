@@ -9,7 +9,7 @@ const CreateReseacher = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
-    const [approve,setapprove]= useState(false);
+    const [approve,setApprove]= useState(false);
     const [uploads, setUploads] = useState("");
 
     const [progressPercent, setProgressPercent] = useState();
@@ -38,6 +38,7 @@ const CreateReseacher = (props) => {
         setEmail("");
         setPassword("");
         setPhoneNo("");
+        setApprove(false);
         
         axios.post("/reseacher/add", formData, {
             headers: {
