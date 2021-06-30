@@ -27,6 +27,7 @@ import ResearcherLogin from "./Users/UserLogin/ResearcherLogin";
 import WsConLogin from "./Users/UserLogin/WsConLogin";
 import UserNavBar from "./Users/UserNavBar/UserNavBar";
 import Stats from "./Admin/Pages/Stats";
+import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
 
 const App = () => {
   return (
@@ -94,10 +95,14 @@ const App = () => {
           <Route exact path="/user/wsconductor/login">
             <UserNavBar />
             <WsConLogin />
-            </Route>
+          </Route>
           <Route exact path="/admin/stats">
             <AdminNavBar />
             <Stats />
+          </Route>
+          <Route exact path="/attendee/dashboard">
+            <UserNavBar />
+            <AttendeeDashboard />
           </Route>
         </Switch>
       </div>
