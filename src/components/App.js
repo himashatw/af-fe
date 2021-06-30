@@ -29,7 +29,7 @@ import AttendeeLogin from "./Users/UserLogin/AttendeeLogin";
 import AddNews2 from "./EditorWorkspace/AddNews2";
 import ResearcherLogin from "./Users/UserLogin/ResearcherLogin";
 import WsConLogin from "./Users/UserLogin/WsConLogin";
-import UserNavBar from "./Users/UserNavBar/UserNavBar";
+import UserNavbar from "./Users/UserNavBar/UserNavBar"
 import Stats from "./Admin/Pages/Stats";
 import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
 import EditNews from "./EditorWorkspace/EditNews";
@@ -53,15 +53,15 @@ const App = () => {
             <HeroSection />
           </Route>
           <Route exact path="/user/attendee">
-            <UserNavBar />
+            <UserNavbar />
             <CreateAttendee />
           </Route>
           <Route exact path="/user/researcher">
-            <UserNavBar />
+            <UserNavbar />
             <CreateReseacher />
           </Route>
           <Route exact path="/user/wsconductor">
-            <UserNavBar />
+            <UserNavbar />
             <CreateWsConductor />
           </Route>
           <Route exact path="/editor/dashboard">
@@ -135,11 +135,11 @@ const App = () => {
             <ApprovedNews />
           </Route>
           <Route exact path="/user/attendee/login">
-            <UserNavBar />
+            <UserNavbar />
             <AttendeeLogin />
           </Route>
           <Route exact path="/user/researcher/login">
-            <UserNavBar />
+            <UserNavbar />
             <ResearcherLogin />
           </Route>
           <Route exact path="/user/wsconductor/login">
@@ -151,7 +151,7 @@ const App = () => {
             <Stats />
           </Route>
           <Route exact path="/attendee/dashboard">
-            <LUserNavBar />
+            <LUserNavbar />
             <AttendeeDashboard />
           </Route>
           <Route exact path="/editor/editNews/:id" component={EditNews} />
