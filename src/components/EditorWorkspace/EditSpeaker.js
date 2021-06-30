@@ -33,7 +33,16 @@ const EditSpeaker = (props) => {
                 console.log(error);
             });
     }
+    const deleteSpeaker = () => {
+        axios.delete(`/editor/deleteSpeaker/${id}`)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
 
+    }
     return (
 
         <div className="card-header">
@@ -65,9 +74,12 @@ const EditSpeaker = (props) => {
                             <label htmlFor="flyer" className="form-label">Uplaoded Flyer</label>
                             <img src={imgURL} width="400" height="500" />
 
-                            <button className="btn btn-primary mt-5" onClick={updateSpeaker} >
-                                Update
-                            </button>
+                            <div>
+                                <button className="btn btn-primary mt-5" onClick={updateSpeaker} >
+                                    Update
+                                </button>
+                                <button onClick={deleteSpeaker} className="btn btn-danger mt-5">Delete </button>
+                            </div>
                         </div>
                     </div>
                 </div>

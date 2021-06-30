@@ -34,6 +34,7 @@ import Stats from "./Admin/Pages/Stats";
 import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
 import EditNews from "./EditorWorkspace/EditNews";
 import EditSpeaker from "./EditorWorkspace/EditSpeaker";
+import EditorNavBar from "./EditorWorkspace/EditorNavBar";
 
 
 const App = () => {
@@ -58,6 +59,7 @@ const App = () => {
             <CreateWsConductor />
           </Route>
           <Route exact path="/editor/dashboard">
+            <EditorNavBar />
             <EditorDashboard />
           </Route>
           <Route exact path="/reviewer/viewWorkshops">
@@ -96,18 +98,22 @@ const App = () => {
             <UserRegistrationButton />
           </Route>
           <Route exact path="/editor/addSpeaker">
+            <EditorNavBar />
             <AddSpeaker />
           </Route>
           <Route exact path="/editor/viewSpeaker">
+            <EditorNavBar />
             <ViewSpeaker />
           </Route>
           <Route exact path="/editor/addNews">
             <AddNews />
           </Route>
           <Route exact path="/editor/addNews2">
+            <EditorNavBar />
             <AddNews2 />
           </Route>
           <Route exact path="/editor/viewNews">
+            <EditorNavBar />
             <ViewNews />
           </Route>
           <Route exact path="/admin">
@@ -142,8 +148,9 @@ const App = () => {
             <UserNavBar />
             <AttendeeDashboard />
           </Route>
-          <Route exact path="/editor/editNews/:id" component={EditNews} />
-          <Route exact path="/editor/editSpeaker/:id" component={EditSpeaker} />
+
+          <Route exact path="/editor/editNews/:id" component={EditNews} > </Route>
+          <Route exact path="/editor/editSpeaker/:id" component={EditSpeaker} ></Route>
         </Switch>
       </div>
     </Router>

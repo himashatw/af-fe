@@ -12,6 +12,8 @@ const ViewSpeaker = () => {
     })
   }, [])
 
+
+
   return (
 
     <div className="card-header">
@@ -40,9 +42,6 @@ const ViewSpeaker = () => {
                         <td>
                           <Link to={`/editor/editSpeaker/${item._id}`} className="btn btn-outline-success">
                             Edit
-                          </Link>
-                          <Link to="/editor/deleteSpeaker" className="btn btn-outline-danger">
-                            Delete
                           </Link>
                         </td>
                       </tr>

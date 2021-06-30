@@ -32,14 +32,26 @@ const EditNews = (props) => {
             .catch((error) => {
                 console.log(error);
             });
+        window.location("/ViewNews.js")
     }
 
+    const deleteNews = () => {
+        //const { id } = news._id
+        axios.delete(`/editor/deleteNews/${id}`)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        window.location("/ViewNews")
+    }
     return (
 
         <div className="card-header">
             <h4>Edit Conference News</h4>
             <div className="container">
-                <div className="position-absolute top-50 start-50" style={{ marginLeft: "20%", marginTop: "10%" }}>
+                <div className="position-absolute top-50 start-50" style={{ marginLeft: "18%", marginTop: "5%" }}>
                     <div className="shadow p-3 mb-5 bg-body rounded" >
                         <div className="mb-3">
 
@@ -64,10 +76,13 @@ const EditNews = (props) => {
 
                             <label htmlFor="flyer" className="form-label">Uplaoded Flyer</label>
                             <img src={imgURL} width="400" height="500" />
+                            <div>
+                                <button className="btn btn-primary mt-5" onClick={updateNews} >
+                                    Update
+                                </button>
+                                <button onClick={deleteNews} className="btn btn-danger mt-5">Delete </button>
+                            </div>
 
-                            <button className="btn btn-primary mt-5" onClick={updateNews} >
-                                Update
-                            </button>
                         </div>
                     </div>
                 </div>
