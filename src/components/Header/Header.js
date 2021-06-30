@@ -80,7 +80,7 @@ const Header = () => {
               </li>
             </ul>
             {button && (
-              <HomeButton buttonStyle="btn--outline">SIGN UP</HomeButton>
+              <HomeButton buttonStyle="btn--outline">Login</HomeButton>
             )}
           </div>
         </nav>

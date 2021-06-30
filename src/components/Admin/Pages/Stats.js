@@ -8,7 +8,7 @@ const Stats = () => {
       setStatObj(respone.data.countObj);
     });
   }, []);
-  console.log(statObj);
+
   return (
     <div className="stats">
       <div className="container mt-2" style={{ border: "1px solid black" }}>

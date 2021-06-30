@@ -18,13 +18,13 @@ import Home from "../components/Admin/Pages/Home";
 import News from "./Admin/Pages/News";
 import ApprovedNews from "./Admin/Pages/ApprovedNews";
 import ViewWorkshops from "./Reviewer/viewWorkshops";
-import DownloadResearchs from "./DownloadPage/downloadResearchs"
-import DownloadWorkshops from "./DownloadPage/downloadWorkshops"
+import DownloadResearchs from "./DownloadPage/downloadResearchs";
+import DownloadWorkshops from "./DownloadPage/downloadWorkshops";
 import ReviewerRegister from "./Reviewer/reviewerRegister";
 import ReviewerLogin from "./Reviewer/reviewerLogin";
 import ReviewerDashboard from "./Reviewer/reviewerDashboard";
 import DownloadDashboard from "./DownloadPage/DashboardForDownload";
-import ReviewNavBar from "./Reviewer/ReviewNavBar"
+import ReviewNavBar from "./Reviewer/ReviewNavBar";
 import AttendeeLogin from "./Users/UserLogin/AttendeeLogin";
 import AddNews2 from "./EditorWorkspace/AddNews2";
 import ResearcherLogin from "./Users/UserLogin/ResearcherLogin";
@@ -32,8 +32,13 @@ import WsConLogin from "./Users/UserLogin/WsConLogin";
 import UserNavBar from "./Users/UserNavBar/UserNavBar";
 import Stats from "./Admin/Pages/Stats";
 import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
+import ResearcherDashboard from "./Users/UserDashboard/ResearcherDashboard";
+import WsConductorDashBoard from "./Users/UserDashboard/WsConductorDashBoard";
+import LUserNavbar from "./Users/UserNavBar/lUserNavbar";
+import UserLoginButton from "./Users/UserRegistrationButton/UserLoginButton";
+import Speaker from "./Admin/Pages/Speakers";
+import Users from "./Admin/Pages/Users";
 import ReviwernotLogedNavBar from "./Reviewer/ReviwernotLogedNavBar"
-
 
 const App = () => {
   return (
@@ -138,8 +143,27 @@ const App = () => {
             <Stats />
           </Route>
           <Route exact path="/attendee/dashboard">
-            <UserNavBar />
+            <LUserNavbar />
             <AttendeeDashboard />
+          </Route>
+          <Route exact path="/researcher/dashboard">
+            <LUserNavbar />
+            <ResearcherDashboard />
+          </Route>
+          <Route exact path="/workshopcon/dashboard">
+            <LUserNavbar />
+            <WsConductorDashBoard />
+          </Route>
+          <Route exact path="/login">
+            <UserLoginButton />
+          </Route>
+          <Route exact path="/admin/speakers">
+            <AdminNavBar />
+            <Speaker />
+          </Route>
+          <Route exact path="/admin/users">
+            <AdminNavBar />
+            <Users />
           </Route>
         </Switch>
       </div>

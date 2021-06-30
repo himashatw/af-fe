@@ -12,6 +12,7 @@ const AddNews2 = () => {
     console.log(event.target.files[0]);
     setSelectedFile(event.target.files[0]);
   };
+  //upload the image url into the clode base storage => cloudinary
   const fileUploadHandler = () => {
     setUploadingTxt(true);
     const data = new FormData();

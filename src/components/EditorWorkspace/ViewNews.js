@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "../../services/axios";
 
 const ViewNews = () =>{
+
+const [news,setNews] = useState([])
+useEffect(()=>{
+  axios.get("/editor/viewNews").then((res) => {
+    console.log(res.data.news);
+    setNews(res.data.news)
+  })
+},[])
+
     return(
+
 <div className="card-header">
+  
 <h4>View Conference News</h4>
 <div className="container">
-<div className="position-absolute top-50 start-50" style={{  marginLeft: "20%", marginTop:"10%" }}>
+<div className="position-absolute top-50 start-50" style={{  marginLeft: "5%", marginTop:"5%" }}>
 <div  className="shadow p-3 mb-5 bg-body rounded" >
 <table class="table caption-top">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Description</th>
       <th scope="col">Flyer Image</th>
@@ -19,48 +30,25 @@ const ViewNews = () =>{
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>
-      <Link to="/editor/editNews" className="btn btn-outline-success">
-              Edit 
-      </Link>
-      <Link to="/editor/deleteNews" className="btn btn-outline-danger">
-              Delete
-      </Link>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>
-      <Link to="/editor/editNews" className="btn btn-outline-success">
-              Edit 
-      </Link>
-      <Link to="/editor/deleteNews" className="btn btn-outline-danger">
-              Delete
-      </Link>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td>
-      <Link to="/editor/editNewsr" className="btn btn-outline-success">
-              Edit 
-      </Link>
-      <Link to="/editor/deleteNews" className="btn btn-outline-danger">
-              Delete
-      </Link>
-      </td>
-    </tr>
+  {
+    news.map(item=>{
+      return(
+        <tr>
+        <td>{item.title}</td>
+        <td>{item.description}</td>
+        <td><img src = {item.imgURL} width="500" height="600" /></td>
+        <td>
+        <Link to="/editor/editNews" className="btn btn-outline-success">
+                Edit 
+        </Link>
+        <Link to="/editor/deleteNews" className="btn btn-outline-danger">
+                Delete
+        </Link>
+        </td>
+      </tr>
+      )
+    })
+  }
   </tbody>
 </table>
 
