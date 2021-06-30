@@ -32,7 +32,10 @@ import WsConLogin from "./Users/UserLogin/WsConLogin";
 import UserNavBar from "./Users/UserNavBar/UserNavBar";
 import Stats from "./Admin/Pages/Stats";
 import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
-
+import ResearcherDashboard from "./Users/UserDashboard/ResearcherDashboard";
+import WsConductorDashBoard from "./Users/UserDashboard/WsConductorDashBoard";
+import LUserNavbar from "./Users/UserNavBar/lUserNavbar";
+import UserLoginButton from "./Users/UserRegistrationButton/UserLoginButton";
 
 const App = () => {
   return (
@@ -137,8 +140,19 @@ const App = () => {
             <Stats />
           </Route>
           <Route exact path="/attendee/dashboard">
-            <UserNavBar />
+            <LUserNavbar />
             <AttendeeDashboard />
+          </Route>
+          <Route exact path="/researcher/dashboard">
+            <LUserNavbar />
+            <ResearcherDashboard />
+          </Route>
+          <Route exact path="/workshopcon/dashboard">
+            <LUserNavbar />
+            <WsConductorDashBoard />
+          </Route>
+          <Route exact path="/login">
+            <UserLoginButton />
           </Route>
         </Switch>
       </div>

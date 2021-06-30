@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserNavBar = () => {
+const lUserNavbar = () => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -15,7 +15,7 @@ const UserNavBar = () => {
                             <a className="nav-link" href="/sign-up">Registration</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/login">Sign In</a>
+                            <a className="nav-link" href="/login">Sign Out</a>
                         </li>
                     </ul>
                 </div>
@@ -25,4 +25,4 @@ const UserNavBar = () => {
     )
 }
 
-export default UserNavBar;
+export default lUserNavbar;
