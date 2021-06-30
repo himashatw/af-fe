@@ -1,6 +1,6 @@
 import axios from '../../services/axios';
 import React,{useState} from "react";
-import {useHistory} from 'react-router-dom';
+
 const AddNews = () =>{
    // const history = useHistory()
     const[title,setTitle] = useState("")
