@@ -2,32 +2,37 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header/Header";
 import "./App.css";
-import CreateAttendee from "../components/Users/CreateAttendee";
 import CreateReseacher from "../components/Users/CreateResearcher";
 import EditorDashboard from "./EditorWorkspace/EditorDashboard";
 import CreateAttendee from "./Users/CreateAttendee";
 import HeroSection from "../components/HeroSection/HeroSection";
-import viewResearches from "./Reviewer/viewResearches";
+import ViewResearches from "./Reviewer/viewResearches";
 import CreateWsConductor from "../components/Users/CreateWsConductor";
 import AddSpeaker from "./EditorWorkspace/AddSpeaker";
 import ViewSpeaker from "./EditorWorkspace/ViewSpeaker";
 import AddNews from "./EditorWorkspace/AddNews";
 import ViewNews from "./EditorWorkspace/ViewNews";
-import viewResearches from "./Reviewer/viewResearches";
 import UserRegistrationButton from "./Users/UserRegistrationButton/UserRegistrationButton";
 import AdminNavBar from "./Admin/AdminNavBar/AdminNavBar";
 import Home from "../components/Admin/Pages/Home";
 import News from "./Admin/Pages/News";
 import ApprovedNews from "./Admin/Pages/ApprovedNews";
-import viewWorkshops from "./Reviewer/viewWorkshops";
+import ViewWorkshops from "./Reviewer/viewWorkshops";
+import DownloadResearchs from "./DownloadPage/downloadResearchs"
+import DownloadWorkshops from "./DownloadPage/downloadWorkshops"
+import ReviewerRegister from "./Reviewer/reviewerRegister";
+import ReviewerLogin from "./Reviewer/reviewerLogin";
+import ReviewerDashboard from "./Reviewer/reviewerDashboard";
+import DownloadDashboard from "./DownloadPage/DashboardForDownload";
+import ReviewNavBar from "./Reviewer/ReviewNavBar"
 import AttendeeLogin from "./Users/UserLogin/AttendeeLogin";
-import downloadResearchs from "./DownloadPage/downloadResearchs"
-import downloadWorkshops from "./DownloadPage/downloadWorkshops"
+import AddNews2 from "./EditorWorkspace/AddNews2";
 import ResearcherLogin from "./Users/UserLogin/ResearcherLogin";
 import WsConLogin from "./Users/UserLogin/WsConLogin";
 import UserNavBar from "./Users/UserNavBar/UserNavBar";
 import Stats from "./Admin/Pages/Stats";
 import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
+
 
 const App = () => {
   return (
@@ -42,7 +47,6 @@ const App = () => {
             <UserNavBar />
             <CreateAttendee />
           </Route>
-          <Route path="/reviewer/viewResearches" component={viewResearches} />
           <Route exact path="/user/researcher">
             <UserNavBar />
             <CreateReseacher />
@@ -54,9 +58,38 @@ const App = () => {
           <Route exact path="/editor/dashboard">
             <EditorDashboard />
           </Route>
-          <Route path="/reviewer/viewWorkshops" component={viewWorkshops} />
-          <Route path="/downloads/Research" component={downloadResearchs} />
-          <Route path="/downloads/Workshops" component={downloadWorkshops} />
+          <Route exact path="/reviewer/viewWorkshops">
+            <ReviewNavBar />
+            <ViewWorkshops />
+          </Route>
+          <Route exact path="/downloads/Research">
+            <ReviewNavBar />
+            <DownloadResearchs />
+          </Route>
+          <Route exact path="/downloads/Workshops">
+            <ReviewNavBar />
+            <DownloadWorkshops />
+          </Route>
+          <Route exact path="/downloads/dashboard">
+            <ReviewNavBar />
+            <DownloadDashboard />
+          </Route>
+          <Route exact path="/reviewer/register">
+            <ReviewNavBar />
+            <ReviewerRegister />
+          </Route>
+          <Route path="/reviewer/login" >
+            <ReviewNavBar />
+            <ReviewerLogin />
+          </Route>
+          <Route path="/reviewer/dashboard/:email">
+            <ReviewNavBar />
+            <ReviewerDashboard />
+          </Route>
+          <Route path="/reviewer/viewResearches">
+            <ReviewNavBar />
+            <ViewResearches />
+          </Route>
           <Route exact path="/sign-up">
             <UserRegistrationButton />
           </Route>
@@ -68,6 +101,9 @@ const App = () => {
           </Route>
           <Route exact path="/editor/addNews">
             <AddNews />
+          </Route>
+          <Route exact path="/editor/addNews2">
+            <AddNews2 />
           </Route>
           <Route exact path="/editor/viewNews">
             <ViewNews />
