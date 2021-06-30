@@ -144,7 +144,7 @@ const App = () => {
             <ResearcherLogin />
           </Route>
           <Route exact path="/user/wsconductor/login">
-            <UserNavBar />
+            <LUserNavBar />
             <WsConLogin />
           </Route>
           <Route exact path="/admin/stats">
