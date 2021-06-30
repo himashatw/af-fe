@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from '../../services/axios'
 import { pdfDownload } from './pdfDownload'
-import { pdfDownload } from './pdfDownload'
 import "./Reviewer.css"
 
 class viewWorkshops extends Component {

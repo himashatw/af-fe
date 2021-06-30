@@ -1,6 +1,5 @@
 import React from 'react'
 import { FaBeer } from 'react-icons/fa';
-import { FcSearch } from "react-icons/bi";
 import { FcSearch } from "react-icons/fc";
 
 class ReviwernotLogedNavBar extends React.Component {
