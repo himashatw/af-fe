@@ -1,5 +1,9 @@
 
 /* The alert message box */
+.research-content{
+  height: 100vh;
+ width: 100%;
+}
 .research-alert {
   padding: 20px;
   background-color: #f44336; /* Red */
@@ -7,13 +11,14 @@
   margin-bottom: 15px;
   text-align: center;
 }
-h3 {
+/* h3 {
     text-decoration: underline;
-    color: black;
-  }
-h5{
-  color: white;
-}
+    color:black;
+  } */
+
 .card-content-research{
   background: #949494;
+}
+.p-44{
+  color:red
 }

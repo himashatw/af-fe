@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from '../../services/axios'
+import './Workshop.css'
 
 class reviewerRegister extends Component {
     constructor(props) {
@@ -38,6 +39,7 @@ class reviewerRegister extends Component {
 
     render() {
         return (
+            <div className="research-login-content">
             <div className="container">
                 <br/>
                 <div className="card" style={{ width: "50%", marginLeft: "25%" }}>
@@ -106,11 +108,12 @@ class reviewerRegister extends Component {
                             <br />
                             <button type="submit" className="btn btn-primary">Submit</button>
                             <button className="btn btn-danger" style={{ marginLeft: "2%" }}>Cancel</button>
+                            <a className="btn btn-secondary" href="/reviewer/login" style={{ marginLeft: "2%" }}>Login Now</a>
                         </form>
                     </div>
                 </div>
             </div>
-
+            </div>
         );
     }
 }

@@ -1,27 +1,39 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import '../Reviewer/Reviewer.css'
+import '../DownloadPage/DownloadDashBoard.css'
 
-class downloadDashboard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        
-        }
-    }
-    render() {
-        return (
-            <div className="container">
-                <center><h3>Download Dashboard</h3></center>
-                <Link to="/downloads/Research" className="list-group-item list-group-item-action">
-                     Research papers Download
-                </Link>
-                <Link to="/downloads/Workshops" className="list-group-item list-group-item-action">
-                    See Workshops Details
-                </Link>
+const downloadDashboard = () => {
+
+    return (
+        <div className="dash-usha-container">
+            <br />
+            <div className="ushan-para"><center><h2>Welcome to ICAF 1.0 Download Page</h2></center></div>
+            <div>
+                <table className="table">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div>
+                                    <Link to="/downloads/Research">
+                                        <button className="ushan addbtn_Effect">Research Paper Download</button>
+                                    </Link>
+                                    <p style={{ color: 'white' }}>View Research papers relevant to conference.</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <Link to="/downloads/Workshops">
+                                        <button className="ushan addbtn_Effect">Workshop Details</button>
+                                    </Link>
+                                    <p style={{ color: 'white' }}>View Workshop details relevant to conference.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        );
-    }
+        </div>
+    )
 }
 
 export default downloadDashboard;
