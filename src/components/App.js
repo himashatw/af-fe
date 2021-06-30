@@ -38,6 +38,7 @@ import LUserNavbar from "./Users/UserNavBar/lUserNavbar";
 import UserLoginButton from "./Users/UserRegistrationButton/UserLoginButton";
 import Speaker from "./Admin/Pages/Speakers";
 import Users from "./Admin/Pages/Users";
+import ReviwernotLogedNavBar from "./Reviewer/ReviwernotLogedNavBar"
 
 const App = () => {
   return (
@@ -80,11 +81,11 @@ const App = () => {
             <DownloadDashboard />
           </Route>
           <Route exact path="/reviewer/register">
-            <ReviewNavBar />
+            <ReviwernotLogedNavBar />
             <ReviewerRegister />
           </Route>
-          <Route path="/reviewer/login">
-            <ReviewNavBar />
+          <Route path="/reviewer/login" >
+            <ReviwernotLogedNavBar />
             <ReviewerLogin />
           </Route>
           <Route path="/reviewer/dashboard/:email">
