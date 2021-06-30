@@ -28,6 +28,7 @@ import ApprovedNews from "./Admin/Pages/ApprovedNews";
 import viewWorkshops from "./Reviewer/viewWorkshops";
 import downloadResearchs from "./DownloadPage/downloadResearchs"
 import downloadWorkshops from "./DownloadPage/downloadWorkshops"
+import AddNews2 from "./EditorWorkspace/AddNews2";
 
 
 
@@ -67,6 +68,9 @@ const App = () => {
           </Route>
           <Route exact path="/editor/addNews">
             <AddNews />
+          </Route>
+          <Route exact path="/editor/addNews2">
+            <AddNews2 />
           </Route>
           <Route exact path="/editor/viewNews">
             <ViewNews />
