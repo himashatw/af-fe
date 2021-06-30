@@ -32,6 +32,8 @@ import WsConLogin from "./Users/UserLogin/WsConLogin";
 import UserNavBar from "./Users/UserNavBar/UserNavBar";
 import Stats from "./Admin/Pages/Stats";
 import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
+import EditNews from "./EditorWorkspace/EditNews";
+import EditSpeaker from "./EditorWorkspace/EditSpeaker";
 
 
 const App = () => {
@@ -140,6 +142,8 @@ const App = () => {
             <UserNavBar />
             <AttendeeDashboard />
           </Route>
+          <Route exact path="/editor/editNews/:id" component={EditNews} />
+          <Route exact path="/editor/editSpeaker/:id" component={EditSpeaker} />
         </Switch>
       </div>
     </Router>

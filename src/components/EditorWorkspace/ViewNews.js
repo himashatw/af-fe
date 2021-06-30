@@ -38,7 +38,7 @@ useEffect(()=>{
         <td>{item.description}</td>
         <td><img src = {item.imgURL} width="500" height="600" /></td>
         <td>
-        <Link to="/editor/editNews" className="btn btn-outline-success">
+        <Link to={`/editor/editNews/${item._id}`} className="btn btn-outline-success">
                 Edit 
         </Link>
         <Link to="/editor/deleteNews" className="btn btn-outline-danger">
