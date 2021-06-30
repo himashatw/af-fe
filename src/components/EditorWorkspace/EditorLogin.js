@@ -10,13 +10,13 @@ const EditorLogin = () => {
   const loginBtnHandler = async (e) => {
     e.preventDefault();
     await axios
-      .post("/adminlogin", {
+      .post("/editorlogin", {
         email: email,
         password: password,
       })
       .then((res) => {
         if (res.status === 200) {
-          history.push("/admin");
+          history.push("/editor/dashboard");
         } else {
           alert("Invalid Email and Password");
         }
