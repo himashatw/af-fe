@@ -24,7 +24,9 @@ const PendingNewsCard = ({ title, description, imgURL, id }) => {
             {description}
           </p>
           <center>
-            <button onClick={btnHandler}>Approve</button>
+            <button type="button" class="btn btn-success" onClick={btnHandler}>
+              Approve
+            </button>
           </center>
         </div>
       </div>

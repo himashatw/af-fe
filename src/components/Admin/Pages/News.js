@@ -6,7 +6,7 @@ function News() {
   const [news, setNews] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      await axios.get("/approvednews").then((response) => {
+      await axios.get("/pendingnews").then((response) => {
         setNews(response.data.result);
       });
     };

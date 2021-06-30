@@ -26,7 +26,7 @@ const Stats = () => {
                   style={{ display: "inline-block", textAlign: "center" }}
                 >
                   <h5 className="card-title">Attendees</h5>
-                  <i className="fas fa-users"></i>
+                  <i className="fas fa-users fa-2x"></i>
                 </div>
                 <center>
                   <h1 className="card-text mt-3">{statObj.attendees}</h1>
@@ -42,7 +42,7 @@ const Stats = () => {
                   style={{ display: "inline-block", textAlign: "center" }}
                 >
                   <h5 className="card-title">Researchers</h5>
-                  <i class="fas fa-users"></i>
+                  <i className="fas fa-user-friends fa-2x"></i>
                 </div>
                 <center>
                   <h1 className="card-text mt-3">{statObj.researchers}</h1>
@@ -58,7 +58,7 @@ const Stats = () => {
                   style={{ display: "inline-block", textAlign: "center" }}
                 >
                   <h5 className="card-title">Workshops</h5>
-                  <i class="fas fa-users"></i>
+                  <i className="fas fa-laptop-house fa-2x"></i>
                 </div>
                 <center>
                   <h1 className="card-text mt-3">{statObj.workshops}</h1>
@@ -74,7 +74,7 @@ const Stats = () => {
                   style={{ display: "inline-block", textAlign: "center" }}
                 >
                   <h5 className="card-title">Research Papers</h5>
-                  <i class="fas fa-users"></i>
+                  <i className="fas fa-paperclip fa-2x"></i>
                 </div>
                 <center>
                   <h1 className="card-text mt-3">{statObj.papers}</h1>
