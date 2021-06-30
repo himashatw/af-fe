@@ -43,6 +43,7 @@ import Speaker from "./Admin/Pages/Speakers";
 import Users from "./Admin/Pages/Users";
 import ReviwernotLogedNavBar from "./Reviewer/ReviwernotLogedNavBar";
 import AdminLogin from "./Admin/Login/AdminLogin";
+import EditorLogin from "./EditorWorkspace/EditorLogin";
 
 const App = () => {
   return (
@@ -180,6 +181,10 @@ const App = () => {
           <Route exact path="/admin/login">
             <Header />
             <AdminLogin />
+          </Route>
+          <Route exact path="/editor/login">
+            <Header />
+            <EditorLogin />
           </Route>
         </Switch>
       </div>
