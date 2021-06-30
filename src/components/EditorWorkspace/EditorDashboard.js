@@ -5,8 +5,8 @@ const EditorDashboard = () => {
     return (
       <div className="card-header">
       <h4>Editor Dashboard</h4>
-      <div className="position-absolute top-50 start-50 translate-middle">
-       <div className="row">
+      <div className="position-absolute top-50 start-50">
+      <div className="row" style={{  marginLeft: "35%", marginTop:"20%" }}>
        <div className="col-sm-6">
        <div className="card">
        <div className="card-body"  className="shadow p-3 mb-5 bg-body rounded" >

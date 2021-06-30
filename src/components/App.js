@@ -26,11 +26,13 @@ import ReviewerDashboard from "./Reviewer/reviewerDashboard";
 import DownloadDashboard from "./DownloadPage/DashboardForDownload";
 import ReviewNavBar from "./Reviewer/ReviewNavBar"
 import AttendeeLogin from "./Users/UserLogin/AttendeeLogin";
+import AddNews2 from "./EditorWorkspace/AddNews2";
 import ResearcherLogin from "./Users/UserLogin/ResearcherLogin";
 import WsConLogin from "./Users/UserLogin/WsConLogin";
 import UserNavBar from "./Users/UserNavBar/UserNavBar";
 import Stats from "./Admin/Pages/Stats";
 import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
+
 
 const App = () => {
   return (
@@ -99,6 +101,9 @@ const App = () => {
           </Route>
           <Route exact path="/editor/addNews">
             <AddNews />
+          </Route>
+          <Route exact path="/editor/addNews2">
+            <AddNews2 />
           </Route>
           <Route exact path="/editor/viewNews">
             <ViewNews />

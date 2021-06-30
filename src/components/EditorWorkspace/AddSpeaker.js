@@ -4,7 +4,8 @@ const AddSpeaker = () =>{
     return(
         <div className="card-header">
         <h4>Add Keynote Speakers</h4>
-        <div className="container" className="position-absolute top-50 start-50 translate-middle" >
+        <div className="container">
+        <div className="position-absolute top-50 start-50" style={{  marginLeft: "20%", marginTop:"10%" }}>
         <div  className="shadow p-3 mb-5 bg-body rounded" >
         <div className="mb-3">
             <form>
@@ -28,6 +29,7 @@ const AddSpeaker = () =>{
         
 
         </div> 
+        </div>
         </div>
         </div>
         </div>
