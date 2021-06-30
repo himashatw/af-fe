@@ -33,6 +33,7 @@ import UserNavBar from "./Users/UserNavBar/UserNavBar";
 import Stats from "./Admin/Pages/Stats";
 import AttendeeDashboard from "./Users/UserDashboard/AttendeeDashboard";
 import Speaker from "./Admin/Pages/Speakers";
+import Users from "./Admin/Pages/Users";
 
 const App = () => {
   return (
@@ -143,6 +144,10 @@ const App = () => {
           <Route exact path="/admin/speakers">
             <AdminNavBar />
             <Speaker />
+          </Route>
+          <Route exact path="/admin/users">
+            <AdminNavBar />
+            <Users />
           </Route>
         </Switch>
       </div>
