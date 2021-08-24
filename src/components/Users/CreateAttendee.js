@@ -3,7 +3,7 @@ import axios from '../../services/axios';
 import { useHistory,Link } from 'react-router-dom';
 
 const createAttendee = (props) => {
-    //const history = useHistory();
+    const history = useHistory();
     const initialState = {
         fullName: "",
         email: "",
